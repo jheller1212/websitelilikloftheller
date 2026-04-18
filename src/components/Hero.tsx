@@ -171,7 +171,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 "
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 whitespace-nowrap"
               style={{ color: "var(--color-text)" }}
             >
               {headline}
