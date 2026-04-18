@@ -21,9 +21,12 @@ const affiliations = [
 ];
 
 const awards = [
-  "Cum Laude Doctoral Degree, Maastricht University",
+  "Triple Cum Laude — Bachelor's, Master's, and Doctoral Degree",
+  "Rubicon Postdoctoral Grant (NWO)",
   "PNAS publication — Cannabis & False Memory (2020)",
-  "100+ international media appearances",
+  "533+ Google Scholar citations",
+  "60+ international media appearances (CNN, National Geographic, Daily Mail, WebMD)",
+  "Postdoctoral researcher, University of Bonn",
 ];
 
 const containerVariants = {
@@ -66,12 +69,17 @@ export default function About() {
           {/* Bio + Photo row */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
             <div className="md:col-span-2">
-              <p
-                className="text-base sm:text-lg leading-relaxed mb-6"
-                style={{ color: "var(--color-text-secondary)" }}
-              >
-                {t("about.bio")}
-              </p>
+              <div className="space-y-4 mb-6">
+                {t("about.bio").split("\n\n").map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className="text-base sm:text-lg leading-relaxed"
+                    style={{ color: "var(--color-text-secondary)" }}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
 
               {/* Affiliations */}
               <div className="mb-4">
