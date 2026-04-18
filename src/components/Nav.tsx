@@ -7,7 +7,6 @@ import { useI18n, localeLabels, Locale } from "@/lib/i18n";
 
 const linkKeys = [
   { key: "nav.about", href: "#about" },
-  { key: "nav.research", href: "#research" },
   { key: "nav.publications", href: "#publications" },
   { key: "nav.media", href: "#media" },
 
