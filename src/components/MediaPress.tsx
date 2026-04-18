@@ -7,16 +7,17 @@ import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
 import { pressMentions } from "@/data/press";
 
-const featured = pressMentions.filter((m) => m.featured);
-const totalCountries = new Set(pressMentions.map((m) => m.country)).size;
-const totalLanguages = new Set(pressMentions.map((m) => m.language)).size;
+const sortedMentions = [...pressMentions].sort((a, b) => b.date.localeCompare(a.date));
+const featured = sortedMentions.filter((m) => m.featured);
+const totalCountries = new Set(sortedMentions.map((m) => m.country)).size;
+const totalLanguages = new Set(sortedMentions.map((m) => m.language)).size;
 
 export default function MediaPress() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [showAll, setShowAll] = useState(false);
   const { t } = useI18n();
 
-  const nonFeatured = pressMentions.filter((m) => !m.featured);
+  const nonFeatured = sortedMentions.filter((m) => !m.featured);
   const displayed = showAll ? nonFeatured : [];
 
   return (
