@@ -28,15 +28,6 @@ function GoogleScholarIcon({ size = 18 }: { size?: number }) {
   );
 }
 
-function ResearchGateIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M19.586 0c-1.846 0-3.32.903-4.104 2.127-.784-1.224-2.258-2.127-4.104-2.127C8.178 0 5.76 2.418 5.76 5.618c0 5.244 6.24 9.864 6.24 9.864s6.24-4.62 6.24-9.864C18.24 2.418 15.822 0 12.622 0h-.004z" />
-      <text x="6" y="20" fontSize="12" fontWeight="bold" fontFamily="sans-serif">RG</text>
-    </svg>
-  );
-}
-
 function OrcidIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -56,12 +47,6 @@ const heroSocialLinks = [
     href: "https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en",
     label: "Google Scholar",
     icon: GoogleScholarIcon,
-    prominent: false,
-  },
-  {
-    href: "https://www.researchgate.net/profile/Lilian-Kloft",
-    label: "ResearchGate",
-    icon: ResearchGateIcon,
     prominent: false,
   },
   {

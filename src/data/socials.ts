@@ -2,7 +2,7 @@ export type SocialPlatform =
   | 'linkedin'
 
   | 'google-scholar'
-  | 'researchgate'
+
   | 'orcid'
   | 'university';
 
@@ -27,13 +27,6 @@ export const socialLinks: SocialLink[] = [
     platform: 'google-scholar',
     label: 'Google Scholar',
     url: 'https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en',
-    featured: false,
-  },
-  {
-    id: 'researchgate',
-    platform: 'researchgate',
-    label: 'ResearchGate',
-    url: 'https://www.researchgate.net/profile/Lilian-Kloft',
     featured: false,
   },
   {
