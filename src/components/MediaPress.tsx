@@ -89,9 +89,14 @@ export default function MediaPress() {
                     >
                       {mention.outlet}
                     </span>
-                    <span className="text-xs" style={{ color: "var(--color-text-secondary)" }}>
-                      {mention.type === "podcast" ? "Podcast" : mention.type === "radio" ? "Radio" : ""}
-                    </span>
+                    {(mention.type === "podcast" || mention.type === "radio") && (
+                      <span
+                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
+                        style={{ backgroundColor: "var(--color-accent-secondary)", color: "#1e293b" }}
+                      >
+                        {mention.type === "podcast" ? "Podcast" : "Radio"}
+                      </span>
+                    )}
                   </div>
                   <h3
                     className="font-semibold text-sm leading-snug mb-2"
