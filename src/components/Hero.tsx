@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useScrambleText } from "@/hooks/useScrambleText";
+
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
 
@@ -16,14 +16,6 @@ function LinkedInIcon({ size = 22 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-    </svg>
-  );
-}
-
-function TwitterIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
     </svg>
   );
 }
@@ -61,13 +53,7 @@ const heroSocialLinks = [
     prominent: true,
   },
   {
-    href: "https://x.com/LilianKloft",
-    label: "Twitter/X",
-    icon: TwitterIcon,
-    prominent: false,
-  },
-  {
-    href: "https://scholar.google.com/citations?user=PLACEHOLDER",
+    href: "https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en",
     label: "Google Scholar",
     icon: GoogleScholarIcon,
     prominent: false,
@@ -79,7 +65,7 @@ const heroSocialLinks = [
     prominent: false,
   },
   {
-    href: "https://orcid.org/0000-0002-XXXX-XXXX",
+    href: "https://orcid.org/0000-0002-4615-9581",
     label: "ORCID",
     icon: OrcidIcon,
     prominent: false,
@@ -92,8 +78,8 @@ export default function Hero() {
   const portraitRef = useRef<HTMLDivElement>(null);
   const { t } = useI18n();
 
-  const headline = useScrambleText("Dr. Lilian Kloft-Heller", { delay: 300, speed: 25 });
-  const subtitle = useScrambleText(t("hero.subtitle"), { delay: 800, speed: 20 });
+  const headline = "Dr. Lilian Kloft-Heller";
+  const subtitle = t("hero.subtitle");
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -185,7 +171,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 font-mono"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 "
               style={{ color: "var(--color-text)" }}
             >
               {headline}
@@ -193,7 +179,7 @@ export default function Hero() {
           </motion.div>
 
           <motion.p
-            className="text-lg sm:text-xl md:text-2xl mb-10 font-mono"
+            className="text-lg sm:text-xl md:text-2xl mb-10 "
             style={{ color: "var(--color-text-secondary)" }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

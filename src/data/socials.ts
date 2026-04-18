@@ -1,6 +1,6 @@
 export type SocialPlatform =
   | 'linkedin'
-  | 'twitter'
+
   | 'google-scholar'
   | 'researchgate'
   | 'orcid'
@@ -22,14 +22,7 @@ export const socialLinks: SocialLink[] = [
     url: 'https://www.linkedin.com/in/lilian-kloft/',
     featured: true,
   },
-  {
-    id: 'twitter',
-    platform: 'twitter',
-    label: 'X (Twitter)',
-    url: 'https://x.com/l_kloft',
-    featured: false,
-  },
-  {
+{
     id: 'google-scholar',
     platform: 'google-scholar',
     label: 'Google Scholar',

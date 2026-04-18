@@ -10,7 +10,8 @@ import { socialLinks } from "@/data/socials";
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation(0.1);
-  const [state, handleSubmit] = useForm("mgonaray");
+  // TODO: Create a Formspree form for l.kloft-heller@maastrichtuniversity.nl and replace this ID
+  const [state, handleSubmit] = useForm("xplaceholder");
   const [dismissed, setDismissed] = useState(false);
   const { t } = useI18n();
 
@@ -200,6 +201,15 @@ export default function Contact() {
               Maastricht University
               <br />
               Maastricht, The Netherlands
+            </p>
+            <p className="mt-2">
+              <a
+                href="mailto:l.kloft-heller@maastrichtuniversity.nl"
+                className="hover:opacity-70 transition-opacity"
+                style={{ color: "var(--color-accent)" }}
+              >
+                l.kloft-heller@maastrichtuniversity.nl
+              </a>
             </p>
           </div>
         </motion.div>

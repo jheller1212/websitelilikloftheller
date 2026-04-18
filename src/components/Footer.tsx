@@ -12,14 +12,6 @@ function LinkedInIcon({ size = 20 }: { size?: number }) {
   );
 }
 
-function TwitterIcon({ size = 18 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-    </svg>
-  );
-}
-
 function GoogleScholarIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
@@ -38,9 +30,8 @@ function OrcidIcon({ size = 18 }: { size?: number }) {
 
 const footerSocialLinks = [
   { href: "https://www.linkedin.com/in/lilian-kloft/", label: "LinkedIn", icon: LinkedInIcon, prominent: true },
-  { href: "https://x.com/LilianKloft", label: "Twitter/X", icon: TwitterIcon, prominent: false },
-  { href: "https://scholar.google.com/citations?user=PLACEHOLDER", label: "Google Scholar", icon: GoogleScholarIcon, prominent: false },
-  { href: "https://orcid.org/0000-0002-XXXX-XXXX", label: "ORCID", icon: OrcidIcon, prominent: false },
+  { href: "https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en", label: "Google Scholar", icon: GoogleScholarIcon, prominent: false },
+  { href: "https://orcid.org/0000-0002-4615-9581", label: "ORCID", icon: OrcidIcon, prominent: false },
 ];
 
 const quickLinks = [
