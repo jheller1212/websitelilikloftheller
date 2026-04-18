@@ -128,9 +128,6 @@ export default function Footer() {
               >
                 {t("footer.impressum")}
               </button>
-              <span className="text-xs opacity-50">
-                Built with Next.js
-              </span>
             </div>
           </div>
         </div>
