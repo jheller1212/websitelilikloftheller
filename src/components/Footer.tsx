@@ -36,7 +36,6 @@ const footerSocialLinks = [
 
 const quickLinks = [
   { label: "About", href: "#about" },
-  { label: "Research", href: "#research" },
   { label: "Publications", href: "#publications" },
   { label: "Media", href: "#media" },
   { label: "Contact", href: "#contact" },

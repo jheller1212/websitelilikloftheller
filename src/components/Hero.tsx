@@ -181,7 +181,7 @@ export default function Hero() {
           >
             <MagneticButton
               as="a"
-              href="#research"
+              href="#publications"
               className="px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors"
               style={{ backgroundColor: "var(--color-accent)" } as React.CSSProperties}
             >
