@@ -72,15 +72,7 @@ export default function Publications() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
               >
-                {pub.featured && (
-                  <span
-                    className="inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2"
-                    style={{ backgroundColor: "var(--color-accent)", color: "#fff" }}
-                  >
-                    {t("pub.featured")}
-                  </span>
-                )}
-                <h3
+<h3
                   className="font-semibold mb-2 leading-snug group-hover:underline decoration-1 underline-offset-4"
                   style={{ color: "var(--color-text)" }}
                 >

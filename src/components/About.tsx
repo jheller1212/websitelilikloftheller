@@ -6,8 +6,8 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
 
 const bentoCards = [
-  { area: "a", titleKey: "bento.a.title", descKey: "bento.a.desc", accent: true },
-  { area: "b", titleKey: "bento.b.title", descKey: "bento.b.desc", accent: true },
+  { area: "a", titleKey: "bento.a.title", descKey: "bento.a.desc" },
+  { area: "b", titleKey: "bento.b.title", descKey: "bento.b.desc" },
   { area: "c", titleKey: "bento.c.title", descKey: "bento.c.desc" },
   { area: "d", titleKey: "bento.d.title", descKey: "bento.d.desc" },
   { area: "e", titleKey: "bento.e.title", descKey: "bento.e.desc" },
@@ -149,7 +149,7 @@ export default function About() {
                 <h3
                   className="text-lg sm:text-xl font-bold mb-3"
                   style={{
-                    color: item.accent ? "var(--color-accent)" : "var(--color-text)",
+                    color: "var(--color-text)",
                   }}
                 >
                   {t(item.titleKey)}
