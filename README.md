@@ -2,7 +2,7 @@
 
 Personal academic website for **Dr. Lilian Kloft-Heller**, researcher at Maastricht University specializing in forensic psychology, psychopharmacology, and memory research.
 
-**Live:** [liliankloftheller.com](https://www.liliankloftheller.com)
+**Live:** [jheller1212.github.io/websitelilikloftheller](https://jheller1212.github.io/websitelilikloftheller/)
 
 ## What's on the site
 
@@ -27,7 +27,7 @@ Smooth scrolling powered by Lenis, animations by Framer Motion and GSAP.
 | Forms | Formspree |
 | Fonts | Geist Sans & Mono (local) |
 | Theme | next-themes (system preference + manual toggle) |
-| Hosting | Netlify (auto-deploy on push to main) |
+| Hosting | GitHub Pages (auto-deploy on push to main) |
 
 ## Running locally
 
@@ -46,4 +46,4 @@ npm run build
 
 ## Deploying
 
-Push to `main` — Netlify picks it up automatically.
+Push to `main` — GitHub Actions builds and deploys to GitHub Pages automatically.
