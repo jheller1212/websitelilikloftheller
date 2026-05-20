@@ -2,7 +2,7 @@
 
 Personal academic website for **Dr. Lilian Kloft-Heller**, researcher at Maastricht University specializing in forensic psychology, psychopharmacology, and memory research.
 
-**Live:** [jheller1212.github.io/websitelilikloftheller](https://jheller1212.github.io/websitelilikloftheller/)
+**Live:** [liliankloftheller.com](https://liliankloftheller.com)
 
 ## What's on the site
 
