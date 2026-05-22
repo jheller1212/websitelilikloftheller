@@ -78,7 +78,7 @@ const jsonLd = {
   familyName: "Kloft-Heller",
   honorificPrefix: "Dr.",
   url: siteUrl,
-  jobTitle: "Researcher in Forensic Psychology & Psychopharmacology",
+  jobTitle: "Assistant Professor & Expert Consultant in Forensic Psychology and Psychopharmacology",
   worksFor: {
     "@type": "Organization",
     name: "Maastricht University, Faculty of Psychology and Neuroscience",
@@ -89,9 +89,10 @@ const jsonLd = {
     "Psychopharmacology",
     "False Memories",
     "Eyewitness Memory",
-    "Drug-Facilitated Crime",
+    "Expert Witness Testimony",
+    "Drug Effects on Memory",
     "Legal Psychology",
-    "Memory and Drugs",
+    "Intoxicated Witness Reliability",
   ],
   sameAs: [
     "https://www.linkedin.com/in/lilian-kloft/",
