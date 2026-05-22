@@ -125,6 +125,34 @@ export default function Contact() {
 
               <div>
                 <label
+                  htmlFor="inquiry"
+                  className="block text-sm font-medium mb-2"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {t("contact.inquiry")}
+                </label>
+                <select
+                  id="inquiry"
+                  name="inquiry"
+                  required
+                  className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
+                  style={{
+                    borderColor: "var(--color-border)",
+                    color: "var(--color-text)",
+                  }}
+                  defaultValue=""
+                >
+                  <option value="" disabled>{t("contact.inquiryDefault")}</option>
+                  <option value="expert">{t("contact.inquiryExpert")}</option>
+                  <option value="research">{t("contact.inquiryResearch")}</option>
+                  <option value="speaking">{t("contact.inquirySpeaking")}</option>
+                  <option value="media">{t("contact.inquiryMedia")}</option>
+                  <option value="other">{t("contact.inquiryOther")}</option>
+                </select>
+              </div>
+
+              <div>
+                <label
                   htmlFor="message"
                   className="block text-sm font-medium mb-2"
                   style={{ color: "var(--color-text-secondary)" }}

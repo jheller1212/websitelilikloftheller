@@ -13,9 +13,9 @@ export const translations: TranslationMap = {
 
   // ── Hero ───────────────────────────────────────────────────────────
   "hero.subtitle": {
-    en: "Psychopharmacology \u00b7 Forensic Psychology \u00b7 Maastricht University",
-    de: "Psychopharmakologie \u00b7 Forensische Psychologie \u00b7 Universit\u00e4t Maastricht",
-    nl: "Psychofarmacologie \u00b7 Forensische Psychologie \u00b7 Universiteit Maastricht",
+    en: "Psychopharmacology \u00b7 Forensic Psychology \u00b7 Expert Consulting",
+    de: "Psychopharmakologie \u00b7 Forensische Psychologie \u00b7 Gutachten & Beratung",
+    nl: "Psychofarmacologie \u00b7 Forensische Psychologie \u00b7 Deskundigenadvies",
   },
   "hero.viewResearch": { en: "View Research", de: "Forschung ansehen", nl: "Onderzoek bekijken" },
   "hero.getInTouch": { en: "Get in Touch", de: "Kontakt aufnehmen", nl: "Neem contact op" },
@@ -128,6 +128,13 @@ export const translations: TranslationMap = {
   "contact.email": { en: "Email", de: "E-Mail", nl: "E-mail" },
   "contact.message": { en: "Message", de: "Nachricht", nl: "Bericht" },
   "contact.messagePlaceholder": { en: "How can I help?", de: "Wie kann ich helfen?", nl: "Hoe kan ik helpen?" },
+  "contact.inquiry": { en: "Inquiry type", de: "Art der Anfrage", nl: "Type aanvraag" },
+  "contact.inquiryDefault": { en: "Select...", de: "Ausw\u00e4hlen...", nl: "Selecteer..." },
+  "contact.inquiryExpert": { en: "Expert witness / consulting", de: "Sachverst\u00e4ndigengutachten / Beratung", nl: "Deskundigenadvies / consultatie" },
+  "contact.inquiryResearch": { en: "Research collaboration", de: "Forschungskooperation", nl: "Onderzoekssamenwerking" },
+  "contact.inquirySpeaking": { en: "Speaking / workshop", de: "Vortrag / Workshop", nl: "Lezing / workshop" },
+  "contact.inquiryMedia": { en: "Media / press", de: "Medien / Presse", nl: "Media / pers" },
+  "contact.inquiryOther": { en: "Other", de: "Sonstiges", nl: "Overig" },
   "contact.send": { en: "Send Message", de: "Nachricht senden", nl: "Bericht versturen" },
   "contact.sending": { en: "Sending...", de: "Wird gesendet...", nl: "Wordt verstuurd..." },
   "contact.thanks": { en: "Thank you!", de: "Vielen Dank!", nl: "Bedankt!" },
