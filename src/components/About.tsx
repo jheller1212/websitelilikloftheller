@@ -15,9 +15,9 @@ const bentoCards = [
 ];
 
 const affiliations = [
-  "Maastricht University — Faculty of Psychology and Neuroscience",
-  "Section Forensic Psychology",
-  "Department of Clinical Psychological Science",
+  { name: "Maastricht University — Dept. of Neuropsychology & Psychopharmacology, Section Psychopharmacology", url: "https://pimaastricht.com" },
+  { name: "Section Forensic Psychology — Maastricht University", url: undefined },
+  { name: "CELL — Forensic Psychology Lab (KU Leuven)", url: "https://celleuven.wixsite.com/home" },
 ];
 
 const awards = [
@@ -88,8 +88,14 @@ export default function About() {
                 </h3>
                 <ul className="space-y-1">
                   {affiliations.map((aff) => (
-                    <li key={aff} className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
-                      {aff}
+                    <li key={aff.name} className="text-sm" style={{ color: "var(--color-text-secondary)" }}>
+                      {aff.url ? (
+                        <a href={aff.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 decoration-1 hover:opacity-70 transition-opacity">
+                          {aff.name}
+                        </a>
+                      ) : (
+                        aff.name
+                      )}
                     </li>
                   ))}
                 </ul>
