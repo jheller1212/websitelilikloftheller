@@ -4,7 +4,12 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
 
-const topicKeys = ["collab.research", "collab.expert", "collab.speaking", "collab.supervision"];
+const topicKeys = [
+  { key: "collab.research", url: undefined },
+  { key: "collab.expert", url: undefined },
+  { key: "collab.speaking", url: undefined },
+  { key: "collab.supervision", url: "https://pimaastricht.com/research-with-us/internships" },
+];
 
 export default function Collaborate() {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -48,20 +53,31 @@ export default function Collaborate() {
             visible: { transition: { staggerChildren: 0.1 } },
           }}
         >
-          {topicKeys.map((key) => (
-            <motion.div
-              key={key}
-              className="glass-card rounded-2xl p-6"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-              }}
-            >
+          {topicKeys.map((item) => {
+            const content = (
               <p className="font-semibold text-sm" style={{ color: "var(--color-text)" }}>
-                {t(key)}
+                {t(item.key)}
               </p>
-            </motion.div>
-          ))}
+            );
+            return (
+              <motion.div
+                key={item.key}
+                className="glass-card rounded-2xl p-6"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                }}
+              >
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
+                    {content}
+                  </a>
+                ) : (
+                  content
+                )}
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         <motion.div
