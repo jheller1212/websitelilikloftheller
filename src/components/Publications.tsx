@@ -5,17 +5,45 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
-import { publications } from "@/data/publications";
+import { publications, Publication } from "@/data/publications";
 import { socialLinks } from "@/data/socials";
 
 const scholarLink = socialLinks.find((s) => s.platform === "google-scholar");
 
+type SortMode = "relevance" | "year";
+
+function getAuthorRelevance(pub: Publication): number {
+  const authors = pub.authors.split(",").map((a) => a.trim());
+  const first = authors[0] ?? "";
+  const last = authors[authors.length - 1] ?? "";
+  // Check first author
+  if (/^Kloft/i.test(first)) return 0;
+  // Check last author
+  if (/^Kloft/i.test(last)) return 1;
+  // Check second author
+  if (authors.length > 1 && /Kloft/i.test(authors[1])) return 2;
+  // Co-author elsewhere
+  return 3;
+}
+
+function sortPublications(pubs: Publication[], mode: SortMode): Publication[] {
+  return [...pubs].sort((a, b) => {
+    if (mode === "relevance") {
+      const relA = getAuthorRelevance(a);
+      const relB = getAuthorRelevance(b);
+      if (relA !== relB) return relA - relB;
+    }
+    return b.year - a.year;
+  });
+}
+
 export default function Publications() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [showAll, setShowAll] = useState(false);
+  const [sortMode, setSortMode] = useState<SortMode>("relevance");
   const { t } = useI18n();
 
-  const sorted = [...publications].sort((a, b) => b.year - a.year);
+  const sorted = sortPublications(publications, sortMode);
   const displayed = showAll ? sorted : sorted.slice(0, 6);
 
   return (
@@ -39,8 +67,26 @@ export default function Publications() {
           >
             {t("pub.title")}
           </h2>
-          <div className="flex gap-6 text-sm" style={{ color: "var(--color-text-secondary)" }}>
+          <div className="flex items-center gap-6 text-sm" style={{ color: "var(--color-text-secondary)" }}>
             <span>{publications.length} {t("pub.count")}</span>
+            <div
+              className="flex items-center rounded-full border text-xs"
+              style={{ borderColor: "var(--color-border)" }}
+            >
+              {(["relevance", "year"] as const).map((mode) => (
+                <button
+                  key={mode}
+                  onClick={() => setSortMode(mode)}
+                  className="px-3 py-1.5 rounded-full transition-colors font-medium capitalize"
+                  style={{
+                    backgroundColor: sortMode === mode ? "var(--color-accent)" : "transparent",
+                    color: sortMode === mode ? "#fff" : "var(--color-text-secondary)",
+                  }}
+                >
+                  {mode === "relevance" ? t("pub.sortRelevance") : t("pub.sortYear")}
+                </button>
+              ))}
+            </div>
           </div>
         </motion.div>
 
@@ -72,7 +118,7 @@ export default function Publications() {
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
                 }}
               >
-<h3
+                <h3
                   className="font-semibold mb-2 leading-snug group-hover:underline decoration-1 underline-offset-4"
                   style={{ color: "var(--color-text)" }}
                 >
