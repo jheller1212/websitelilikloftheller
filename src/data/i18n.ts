@@ -82,6 +82,8 @@ export const translations: TranslationMap = {
   "pub.thesis": { en: "Thesis", de: "Dissertation", nl: "Proefschrift" },
   "pub.comment": { en: "Comments", de: "Kommentare", nl: "Commentaren" },
   "pub.abstract": { en: "Abstracts", de: "Abstracts", nl: "Abstracts" },
+  "pub.sortRelevance": { en: "Relevance", de: "Relevanz", nl: "Relevantie" },
+  "pub.sortYear": { en: "Year", de: "Jahr", nl: "Jaar" },
 
   // ── Media / Press ─────────────────────────────────────────────────
   "media.eyebrow": { en: "Global Coverage", de: "Weltweite Berichterstattung", nl: "Wereldwijde aandacht" },
