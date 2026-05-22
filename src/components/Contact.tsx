@@ -90,7 +90,7 @@ export default function Contact() {
                     name="name"
                     type="text"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2"
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                     style={{
                       borderColor: "var(--color-border)",
                       color: "var(--color-text)",
@@ -112,7 +112,7 @@ export default function Contact() {
                     name="email"
                     type="email"
                     required
-                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2"
+                    className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                     style={{
                       borderColor: "var(--color-border)",
                       color: "var(--color-text)",

@@ -16,7 +16,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const siteUrl = "https://www.liliankloftheller.com";
+const siteUrl = "https://jheller1212.github.io/websitelilikloftheller";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -95,8 +95,8 @@ const jsonLd = {
   ],
   sameAs: [
     "https://www.linkedin.com/in/lilian-kloft/",
-    "https://x.com/LilianKloft",
-    "https://scholar.google.com/citations?user=PLACEHOLDER",
+    "https://orcid.org/0000-0002-4615-9581",
+    "https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en",
     "https://www.researchgate.net/profile/Lilian-Kloft",
   ],
 };
