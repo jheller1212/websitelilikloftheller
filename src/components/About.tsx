@@ -24,7 +24,7 @@ const awards = [
   "Triple Cum Laude — Bachelor's, Master's, and Doctoral Degree",
   "Rubicon Postdoctoral Grant (NWO)",
   "PNAS publication — Cannabis & False Memory (2020)",
-  "533+ Google Scholar citations",
+  "20+ publications · 600+ Google Scholar citations",
   "60+ international media appearances (CNN, National Geographic, Daily Mail, WebMD)",
   "Postdoctoral researcher, University of Bonn",
 ];
