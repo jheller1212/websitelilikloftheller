@@ -201,14 +201,8 @@ export default function Contact() {
               <br />
               Maastricht, The Netherlands
             </p>
-            <p className="mt-2">
-              <a
-                href="mailto:l.kloft-heller@maastrichtuniversity.nl"
-                className="hover:opacity-70 transition-opacity"
-                style={{ color: "var(--color-accent)" }}
-              >
-                l.kloft-heller@maastrichtuniversity.nl
-              </a>
+            <p className="mt-2 text-sm" style={{ color: "var(--color-text-secondary)" }}>
+              Use the form above to get in touch.
             </p>
           </div>
         </motion.div>
