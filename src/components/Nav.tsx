@@ -114,7 +114,7 @@ export default function Nav() {
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a
-          href="/"
+          href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`}
           className="text-lg font-bold tracking-tight"
           style={{ color: "var(--color-text)" }}
         >

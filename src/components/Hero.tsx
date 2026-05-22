@@ -131,7 +131,7 @@ export default function Hero() {
         >
           <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full overflow-hidden shadow-2xl ring-4 ring-white/10">
             <Image
-              src="/images/lilian-hero.jpg"
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/lilian-hero.jpg`}
               alt="Dr. Lilian Kloft-Heller"
               fill
               className="object-cover"
