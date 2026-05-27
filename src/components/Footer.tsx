@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useI18n } from "@/lib/i18n";
 
 // Social icon components
@@ -25,6 +25,18 @@ function OrcidIcon({ size = 18 }: { size?: number }) {
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 01-.947-.947c0-.525.422-.947.947-.947zM6.572 8.278h1.594v10.15H6.572V8.278zM10.569 8.278h4.322c3.903 0 5.65 2.6 5.65 5.075 0 2.766-2.053 5.075-5.697 5.075h-4.275V8.278zm1.594 1.35v7.45h2.634c3.025 0 4.122-1.903 4.122-3.725 0-1.856-1.172-3.725-4.028-3.725h-2.728z" />
     </svg>
+  );
+}
+
+function ObfuscatedEmail({ user, domain }: { user: string; domain: string }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  if (!mounted) return <span>[email protected]</span>;
+  const email = `${user}@${domain}`;
+  return (
+    <a href={`mailto:${email}`} className="underline">
+      {email}
+    </a>
   );
 }
 
@@ -172,7 +184,10 @@ export default function Footer() {
                   Contact
                 </p>
                 <p>
-                  Please use the{" "}
+                  <ObfuscatedEmail user="l.kloft-heller" domain="maastrichtuniversity.nl" />
+                </p>
+                <p className="mt-1">
+                  Or use the{" "}
                   <button
                     onClick={() => {
                       setShowImpressum(false);
@@ -195,22 +210,105 @@ export default function Footer() {
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  No tracking
+                  Data controller
                 </p>
                 <p>
-                  This website does not use cookies, analytics, or any third-party
-                  tracking tools.
+                  Dr. Lilian Kloft-Heller &mdash; <ObfuscatedEmail user="l.kloft-heller" domain="maastrichtuniversity.nl" />
                 </p>
               </div>
 
               <div>
                 <p className="font-medium" style={{ color: "var(--color-text)" }}>
-                  Your rights
+                  Contact form (Formspree)
                 </p>
                 <p>
-                  Under the GDPR, you have the right to access, rectify, or delete
-                  your personal data. To exercise these rights, please contact me
-                  via the contact form.
+                  When you submit the contact form, your name, email address, inquiry type, and message are processed by{" "}
+                  <strong>Formspree Inc.</strong> (US). The legal basis for this processing is your explicit consent (Art.&nbsp;6(1)(a) GDPR), given via the checkbox on the form. See Formspree&apos;s{" "}
+                  <a
+                    href="https://formspree.io/legal/privacy-policy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    Privacy Policy
+                  </a>{" "}
+                  for details.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Transfer to the United States
+                </p>
+                <p>
+                  Formspree is based in the United States. Data transfer is carried out on the basis of Standard Contractual Clauses (Art.&nbsp;46 GDPR).
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Data retention
+                </p>
+                <p>
+                  Form submissions are retained for the duration of the correspondence and deleted thereafter. Formspree retains data in accordance with their own privacy policy.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Hosting
+                </p>
+                <p>
+                  This website is hosted on{" "}
+                  <strong>GitHub Pages</strong> (GitHub Inc. / Microsoft). Server logs may record IP addresses. See GitHub&apos;s{" "}
+                  <a
+                    href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    Privacy Statement
+                  </a>{" "}
+                  for details.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  No cookies or tracking
+                </p>
+                <p>
+                  This website uses no cookies, analytics, or third-party tracking. Language and theme preferences are stored in your browser&apos;s localStorage for functional purposes only and are exempt from consent requirements.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Your rights (Art.&nbsp;15&ndash;21 GDPR)
+                </p>
+                <p>
+                  You have the right to access, rectification, erasure, restriction of processing, data portability, and objection. To exercise these rights, contact me via the email above or the contact form.
+                </p>
+              </div>
+
+              <div>
+                <p className="font-medium" style={{ color: "var(--color-text)" }}>
+                  Right to lodge a complaint
+                </p>
+                <p>
+                  You may lodge a complaint with the{" "}
+                  <a
+                    href="https://autoriteitpersoonsgegevens.nl"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                    style={{ color: "var(--color-accent)" }}
+                  >
+                    Autoriteit Persoonsgegevens
+                  </a>{" "}
+                  (Netherlands) or your local supervisory authority.
                 </p>
               </div>
             </div>
