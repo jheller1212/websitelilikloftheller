@@ -5,24 +5,24 @@ import { publications } from "@/data/publications";
 
 const researchAreas = [
   {
-    title: "False Memory & Substance Use",
+    title: "Substance Effects on Memory",
     description:
-      "My primary line of research examines how psychoactive substances — cannabis, MDMA, alcohol, and psychedelics — affect the formation of false memories. Using both laboratory paradigms (DRM, misinformation) and field studies, I investigate the mechanisms through which intoxication can lead people to remember events that never occurred.",
+      "Researching how recreational and medical substances such as cannabis, alcohol, benzodiazepines, MDMA, and psychedelics affect memory for events.",
   },
   {
-    title: "Eyewitness Testimony & Forensic Interviewing",
+    title: "Validity of Eyewitness Testimony",
     description:
-      "Building on the false memory work, I study the reliability of intoxicated eyewitness statements and develop evidence-based guidelines for forensic interviewing of witnesses and suspects who were under the influence at the time of a crime. This research has direct implications for policing and criminal justice.",
+      "Testing how intoxication affects witness recall, false memories, suggestibility, and eyewitness identification.",
   },
   {
-    title: "Psychedelics & Memory",
+    title: "Expert Witness Work",
     description:
-      "A growing area of my research focuses on how psychedelic substances (ayahuasca, psilocybin) affect episodic memory. This work bridges psychedelic science with forensic psychology, particularly regarding claims about recovered memories during psychedelic-assisted therapy.",
+      "Translating drug and memory science into the courtroom, I work on cases involving substance use and memory.",
   },
   {
-    title: "Sleep, Memory, & the Law",
+    title: "Field Research",
     description:
-      "I also investigate how sleep deprivation — often co-occurring with substance use in real-world settings — interacts with drug effects on memory formation, with implications for the reliability of statements given during prolonged police interrogations.",
+      "Conducting ecologically valid research in real-world settings to study naturalistic substance effects.",
   },
 ];
 
