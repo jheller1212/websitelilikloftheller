@@ -10,8 +10,6 @@ const bentoCards = [
   { area: "b", titleKey: "bento.b.title", descKey: "bento.b.desc" },
   { area: "c", titleKey: "bento.c.title", descKey: "bento.c.desc" },
   { area: "d", titleKey: "bento.d.title", descKey: "bento.d.desc" },
-  { area: "e", titleKey: "bento.e.title", descKey: "bento.e.desc" },
-  { area: "f", titleKey: "bento.f.title", descKey: "bento.f.desc" },
 ];
 
 const affiliations = [
@@ -148,7 +146,7 @@ export default function About() {
 
         {/* Research theme bento cards */}
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-4"
           variants={containerVariants}
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}

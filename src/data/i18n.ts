@@ -30,41 +30,29 @@ export const translations: TranslationMap = {
   },
 
   // Bento cards
-  "bento.a.title": { en: "False Memory & Cannabis", de: "Falsche Erinnerungen & Cannabis", nl: "Valse herinneringen & cannabis" },
+  "bento.a.title": { en: "Substance Effects on Memory", de: "Substanzeffekte auf das Ged\u00e4chtnis", nl: "Effecten van middelen op geheugen" },
   "bento.a.desc": {
-    en: "Pioneering research demonstrating that cannabis increases susceptibility to false memories, published in PNAS and covered by CNN, National Geographic, and 100+ outlets worldwide.",
-    de: "Bahnbrechende Forschung, die zeigt, dass Cannabis die Anf\u00e4lligkeit f\u00fcr falsche Erinnerungen erh\u00f6ht, ver\u00f6ffentlicht in PNAS und berichtet von CNN, National Geographic und \u00fcber 100 Medien weltweit.",
-    nl: "Baanbrekend onderzoek dat aantoont dat cannabis de vatbaarheid voor valse herinneringen vergroot, gepubliceerd in PNAS en belicht door CNN, National Geographic en meer dan 100 media wereldwijd.",
+    en: "Researching how recreational and medical substances such as cannabis, alcohol, benzodiazepines, MDMA, and psychedelics affect memory for events.",
+    de: "Erforschung, wie Freizeit- und medizinische Substanzen wie Cannabis, Alkohol, Benzodiazepine, MDMA und Psychedelika das Ged\u00e4chtnis f\u00fcr Ereignisse beeinflussen.",
+    nl: "Onderzoek naar hoe recreatieve en medische middelen zoals cannabis, alcohol, benzodiazepinen, MDMA en psychedelica het geheugen voor gebeurtenissen be\u00efnvloeden.",
   },
-  "bento.b.title": { en: "MDMA & Memory", de: "MDMA & Ged\u00e4chtnis", nl: "MDMA & geheugen" },
+  "bento.b.title": { en: "Validity of Eyewitness Testimony", de: "Validit\u00e4t von Zeugenaussagen", nl: "Validiteit van getuigenverklaringen" },
   "bento.b.desc": {
-    en: "Investigating how MDMA affects false memory formation, both immediately and after a delay, with implications for therapeutic and forensic contexts.",
-    de: "Untersuchung, wie MDMA die Bildung falscher Erinnerungen beeinflusst, sowohl unmittelbar als auch verz\u00f6gert, mit Implikationen f\u00fcr therapeutische und forensische Kontexte.",
-    nl: "Onderzoek naar hoe MDMA de vorming van valse herinneringen be\u00efnvloedt, zowel direct als vertraagd, met implicaties voor therapeutische en forensische contexten.",
+    en: "Testing how intoxication affects witness recall, false memories, suggestibility, and eyewitness identification.",
+    de: "Untersuchung, wie Intoxikation die Erinnerung von Zeugen, falsche Erinnerungen, Suggestibilit\u00e4t und Zeugenidentifikation beeinflusst.",
+    nl: "Onderzoek naar hoe intoxicatie de herinnering van getuigen, valse herinneringen, suggestibiliteit en getuigenidentificatie be\u00efnvloedt.",
   },
-  "bento.c.title": { en: "Psychedelics & Episodic Memory", de: "Psychedelika & episodisches Ged\u00e4chtnis", nl: "Psychedelica & episodisch geheugen" },
+  "bento.c.title": { en: "Expert Witness Work", de: "Sachverst\u00e4ndigent\u00e4tigkeit", nl: "Deskundigenwerk" },
   "bento.c.desc": {
-    en: "Exploring how ayahuasca and psilocybin affect episodic memory and false memory susceptibility, bridging psychedelic science and forensic psychology.",
-    de: "Erforschung, wie Ayahuasca und Psilocybin episodisches Ged\u00e4chtnis und die Anf\u00e4lligkeit f\u00fcr falsche Erinnerungen beeinflussen.",
-    nl: "Verkenning van hoe ayahuasca en psilocybine episodisch geheugen en de vatbaarheid voor valse herinneringen be\u00efnvloeden.",
+    en: "Translating drug and memory science into the courtroom, I work on cases involving substance use and memory.",
+    de: "Ich bringe Drogen- und Ged\u00e4chtnisforschung in den Gerichtssaal und arbeite an F\u00e4llen, die Substanzkonsum und Ged\u00e4chtnis betreffen.",
+    nl: "Ik vertaal drugs- en geheugenwetenschap naar de rechtszaal en werk aan zaken die middelengebruik en geheugen betreffen.",
   },
-  "bento.d.title": { en: "Forensic Interviewing", de: "Forensische Befragung", nl: "Forensisch verhoor" },
+  "bento.d.title": { en: "Field Research", de: "Feldforschung", nl: "Veldonderzoek" },
   "bento.d.desc": {
-    en: "Developing evidence-based guidelines for interviewing intoxicated witnesses and suspects in criminal investigations.",
-    de: "Entwicklung evidenzbasierter Leitlinien f\u00fcr die Befragung intoxikierter Zeugen und Verd\u00e4chtiger in strafrechtlichen Ermittlungen.",
-    nl: "Ontwikkeling van evidence-based richtlijnen voor het verhoren van ge\u00efntoxiceerde getuigen en verdachten in strafrechtelijk onderzoek.",
-  },
-  "bento.e.title": { en: "Eyewitness Reliability", de: "Zuverl\u00e4ssigkeit von Zeugen", nl: "Betrouwbaarheid van getuigen" },
-  "bento.e.desc": {
-    en: "Understanding how substance use impacts the reliability of eyewitness testimony and its implications for the justice system.",
-    de: "Verst\u00e4ndnis, wie Substanzkonsum die Zuverl\u00e4ssigkeit von Zeugenaussagen und deren Auswirkungen auf das Justizsystem beeinflusst.",
-    nl: "Begrip van hoe middelengebruik de betrouwbaarheid van getuigenverklaringen en de implicaties voor het rechtssysteem be\u00efnvloedt.",
-  },
-  "bento.f.title": { en: "Field Studies", de: "Feldstudien", nl: "Veldonderzoek" },
-  "bento.f.desc": {
-    en: "Conducting ecological research in real-world settings to study false memory formation under naturalistic substance use and sleep deprivation.",
-    de: "\u00d6kologische Forschung in realen Umgebungen zur Untersuchung der Bildung falscher Erinnerungen bei nat\u00fcrlichem Substanzkonsum und Schlafentzug.",
-    nl: "Ecologisch onderzoek in natuurlijke omgevingen naar de vorming van valse herinneringen bij natuurlijk middelengebruik en slaaptekort.",
+    en: "Conducting ecologically valid research in real-world settings to study naturalistic substance effects.",
+    de: "Durchf\u00fchrung \u00f6kologisch valider Forschung in realen Umgebungen zur Untersuchung naturalistischer Substanzeffekte.",
+    nl: "Ecologisch valide onderzoek in natuurlijke omgevingen naar naturalistische effecten van middelen.",
   },
 
   // ── Publications ──────────────────────────────────────────────────
