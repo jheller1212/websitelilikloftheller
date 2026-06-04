@@ -16,7 +16,7 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const siteUrl = "https://jheller1212.github.io/websitelilikloftheller";
+const siteUrl = "https://liliankloftheller.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
