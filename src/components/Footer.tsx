@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useI18n } from "@/lib/i18n";
 
 // Social icon components
@@ -56,6 +56,24 @@ const quickLinks = [
 export default function Footer() {
   const [showImpressum, setShowImpressum] = useState(false);
   const { t } = useI18n();
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const openBtnRef = useRef<HTMLButtonElement>(null);
+  const hasBeenOpenRef = useRef(false);
+
+  useEffect(() => {
+    if (!showImpressum) return;
+    hasBeenOpenRef.current = true;
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setShowImpressum(false);
+    };
+    document.addEventListener("keydown", handleEsc);
+    dialogRef.current?.focus();
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, [showImpressum]);
+
+  useEffect(() => {
+    if (!showImpressum && hasBeenOpenRef.current) openBtnRef.current?.focus();
+  }, [showImpressum]);
 
   return (
     <>
@@ -133,6 +151,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4">
               <button
+                ref={openBtnRef}
                 onClick={() => setShowImpressum(true)}
                 className="hover:opacity-70 transition-opacity underline underline-offset-4 decoration-1"
                 style={{ color: "var(--color-text-secondary)" }}
@@ -153,7 +172,12 @@ export default function Footer() {
           }}
         >
           <div
-            className="glass-card rounded-2xl p-8 sm:p-10 max-w-lg w-full max-h-[80vh] overflow-y-auto relative"
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="impressum-title"
+            tabIndex={-1}
+            className="glass-card rounded-2xl p-8 sm:p-10 max-w-lg w-full max-h-[80vh] overflow-y-auto relative focus:outline-none"
             style={{ color: "var(--color-text)" }}
           >
             <button
@@ -165,7 +189,7 @@ export default function Footer() {
               &times;
             </button>
 
-            <h2 className="text-xl font-bold mb-6">Impressum</h2>
+            <h2 id="impressum-title" className="text-xl font-bold mb-6">Impressum</h2>
 
             <div className="space-y-4 text-sm" style={{ color: "var(--color-text-secondary)" }}>
               <div>
@@ -261,9 +285,9 @@ export default function Footer() {
                 </p>
                 <p>
                   This website is hosted on{" "}
-                  <strong>GitHub Pages</strong> (GitHub Inc. / Microsoft). Server logs may record IP addresses. See GitHub&apos;s{" "}
+                  <strong>Netlify</strong> (Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA). Server logs may record IP addresses. See Netlify&apos;s{" "}
                   <a
-                    href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+                    href="https://www.netlify.com/privacy/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
