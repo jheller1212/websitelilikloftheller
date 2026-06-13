@@ -174,7 +174,7 @@ export default function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-col sm:flex-row items-center md:items-start gap-4 mb-8"
+            className="flex flex-col sm:flex-row flex-wrap items-center md:items-start gap-4 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.8 }}
@@ -186,6 +186,14 @@ export default function Hero() {
               style={{ backgroundColor: "var(--color-accent)" } as React.CSSProperties}
             >
               {t("hero.viewResearch")}
+            </MagneticButton>
+            <MagneticButton
+              as="a"
+              href="/expert-witness"
+              className="px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors"
+              style={{ backgroundColor: "var(--color-accent-secondary)" } as React.CSSProperties}
+            >
+              {t("hero.expertWitness")}
             </MagneticButton>
             <MagneticButton
               as="a"

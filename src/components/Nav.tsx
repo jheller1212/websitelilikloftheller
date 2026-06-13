@@ -9,7 +9,7 @@ const linkKeys = [
   { key: "nav.about", href: "#about" },
   { key: "nav.publications", href: "#publications" },
   { key: "nav.media", href: "#media" },
-
+  { key: "nav.expertWitness", href: "/expert-witness" },
   { key: "nav.contact", href: "#contact" },
 ];
 

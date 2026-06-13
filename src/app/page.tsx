@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
+import ExpertWitness from "@/components/ExpertWitness";
 import Publications from "@/components/Publications";
 import MediaPress from "@/components/MediaPress";
 import Collaborate from "@/components/Collaborate";
@@ -21,6 +22,7 @@ export default function Home() {
       <main className="font-[family-name:var(--font-geist-sans)]">
         <Hero />
         <About />
+        <ExpertWitness />
         <Publications />
         <MediaPress />
         <Collaborate />
