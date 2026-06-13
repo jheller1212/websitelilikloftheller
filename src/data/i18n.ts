@@ -204,9 +204,9 @@ export const translations: TranslationMap = {
     nl: "Getuigenverklaring als Deskundige",
   },
   "ew.service2.desc": {
-    en: "Presenting and explaining the scientific evidence on drug effects and memory reliability to courts, tribunals, or other judicial bodies — in plain language accessible to judges, jurors, and counsel.",
-    de: "Präsentation und Erklärung wissenschaftlicher Erkenntnisse zu Drogeneffekten und Aussagenzuverlässigkeit vor Gerichten, Tribunalen oder anderen Justizorganen — in verständlicher Sprache für Richter, Schöffen und Anwälte.",
-    nl: "Presenteren en toelichten van wetenschappelijk bewijs over de effecten van drugs op geheugen en de betrouwbaarheid van verklaringen voor rechters, tribunalen of andere rechterlijke instanties — in begrijpelijke taal voor rechters, juryleden en advocaten.",
+    en: "Presenting and explaining the scientific evidence on drug effects and memory reliability to courts and other judicial bodies — in plain language accessible to judges and counsel. In-person testimony is available in the Netherlands, Germany, and English-language proceedings across the EU.",
+    de: "Präsentation und Erklärung wissenschaftlicher Erkenntnisse zu Drogeneffekten und Aussagenzuverlässigkeit vor Gerichten und anderen Justizorganen — in verständlicher Sprache für Richter und Anwälte. Persönliche Aussagen sind in den Niederlanden, in Deutschland sowie in englischsprachigen Verfahren innerhalb der EU möglich.",
+    nl: "Presenteren en toelichten van wetenschappelijk bewijs over de effecten van drugs op geheugen en de betrouwbaarheid van verklaringen voor rechtbanken en andere rechterlijke instanties — in begrijpelijke taal voor rechters en advocaten. Verklaringen ter zitting zijn mogelijk in Nederland, Duitsland en Engelstalige procedures binnen de EU.",
   },
   "ew.service3.title": {
     en: "Pre-Trial & Legal Consulting",
@@ -296,9 +296,9 @@ export const translations: TranslationMap = {
     nl: "60+ internationale media-optredens — CNN, National Geographic, Daily Mail, WebMD",
   },
   "ewPage.intro": {
-    en: "When a case turns on the reliability of a statement made under the influence of drugs, the science of memory becomes a legal question. My research sits precisely at this intersection. I provide independent scientific expert opinion grounded in peer-reviewed evidence — to solicitors, barristers, defence and prosecution teams, and courts across the Netherlands, the United Kingdom, Ireland, and internationally.",
-    de: "Wenn ein Fall von der Zuverlässigkeit einer unter Drogeneinfluss abgegebenen Aussage abhängt, wird die Gedächtnisforschung zur Rechtsfrage. Meine Forschung liegt genau an dieser Schnittstelle. Ich erstelle unabhängige wissenschaftliche Gutachten auf der Grundlage von Peer-Review-Evidenz — für Rechtsanwälte, Verteidiger, Anklagevertreter und Gerichte in den Niederlanden, dem Vereinigten Königreich, Irland und international.",
-    nl: "Wanneer een zaak afhangt van de betrouwbaarheid van een verklaring die is afgelegd onder invloed van drugs, wordt de geheugenwetenschap een juridische kwestie. Mijn onderzoek bevindt zich precies op dit snijvlak. Ik verstrek onafhankelijk wetenschappelijk deskundigenadvies op basis van peer-reviewed bewijs — aan advocaten, verdedigers, aanklagers en rechtbanken in Nederland, het Verenigd Koninkrijk, Ierland en internationaal.",
+    en: "When a case turns on the reliability of a statement made under the influence of drugs, the science of memory becomes a legal question. My research sits precisely at this intersection. I provide independent scientific expert opinion grounded in peer-reviewed evidence — to legal teams, defence and prosecution, and courts. Written reports and consulting are available internationally; in-person courtroom testimony is available in the Netherlands, Germany, and English-language proceedings across the EU.",
+    de: "Wenn ein Fall von der Zuverlässigkeit einer unter Drogeneinfluss abgegebenen Aussage abhängt, wird die Gedächtnisforschung zur Rechtsfrage. Meine Forschung liegt genau an dieser Schnittstelle. Ich erstelle unabhängige wissenschaftliche Gutachten auf der Grundlage von Peer-Review-Evidenz — für Anwaltsteams, Verteidigung und Anklage sowie Gerichte. Schriftliche Gutachten und Beratung sind international verfügbar; persönliche Aussagen vor Gericht sind in den Niederlanden, in Deutschland sowie in englischsprachigen Verfahren innerhalb der EU möglich.",
+    nl: "Wanneer een zaak afhangt van de betrouwbaarheid van een verklaring die is afgelegd onder invloed van drugs, wordt de geheugenwetenschap een juridische kwestie. Mijn onderzoek bevindt zich precies op dit snijvlak. Ik verstrek onafhankelijk wetenschappelijk deskundigenadvies op basis van peer-reviewed bewijs — aan juridische teams, verdediging en aanklager, en rechtbanken. Schriftelijke rapporten en advies zijn internationaal beschikbaar; verklaringen ter zitting zijn mogelijk in Nederland, Duitsland en Engelstalige procedures binnen de EU.",
   },
   "ewPage.areasTitle": {
     en: "Areas of Scientific Expertise",
@@ -376,9 +376,9 @@ export const translations: TranslationMap = {
     nl: "Rechtsgebieden & Werktalen",
   },
   "ewPage.jurisdictions": {
-    en: "Available for instructions in the Netherlands, the United Kingdom and Ireland, and for international matters. Working languages: English, Dutch, and German.",
-    de: "Verfügbar für Aufträge in den Niederlanden, dem Vereinigten Königreich und Irland sowie bei internationalen Angelegenheiten. Arbeitssprachen: Englisch, Niederländisch und Deutsch.",
-    nl: "Beschikbaar voor opdrachten in Nederland, het Verenigd Koninkrijk en Ierland, en voor internationale zaken. Werktalen: Engels, Nederlands en Duits.",
+    en: "Written expert reports, pre-trial consulting, and corporate and policy advice are document-based and available for international instructions. In-person courtroom testimony is available in the Netherlands, Germany, and English-language proceedings across the EU. Working languages: English, Dutch, and German.",
+    de: "Schriftliche Gutachten, vorprozessuale Beratung sowie Unternehmens- und Politikberatung sind dokumentenbasiert und für internationale Aufträge verfügbar. Persönliche Aussagen vor Gericht sind in den Niederlanden, in Deutschland sowie in englischsprachigen Verfahren innerhalb der EU möglich. Arbeitssprachen: Englisch, Niederländisch und Deutsch.",
+    nl: "Schriftelijke deskundigenrapporten, pre-processueel advies en bedrijfs- en beleidsadvies zijn documentgebaseerd en beschikbaar voor internationale opdrachten. Verklaringen ter zitting zijn mogelijk in Nederland, Duitsland en Engelstalige procedures binnen de EU. Werktalen: Engels, Nederlands en Duits.",
   },
   "ewPage.credibilityTitle": {
     en: "Research Credentials",
