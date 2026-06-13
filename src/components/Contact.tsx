@@ -143,8 +143,10 @@ export default function Contact() {
                   defaultValue=""
                 >
                   <option value="" disabled>{t("contact.inquiryDefault")}</option>
-                  <option value="expert">{t("contact.inquiryExpert")}</option>
-                  <option value="research">{t("contact.inquiryResearch")}</option>
+                  <option value="expert-report">{t("contact.inquiryExpertReport")}</option>
+                  <option value="pre-trial">{t("contact.inquiryPreTrial")}</option>
+                  <option value="corporate-policy">{t("contact.inquiryCorporate")}</option>
+                  <option value="academic">{t("contact.inquiryAcademic")}</option>
                   <option value="speaking">{t("contact.inquirySpeaking")}</option>
                   <option value="media">{t("contact.inquiryMedia")}</option>
                   <option value="other">{t("contact.inquiryOther")}</option>
