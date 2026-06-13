@@ -29,16 +29,16 @@ const steps = [
   { titleKey: "ewPage.step3.title", descKey: "ewPage.step3.desc", num: "03" },
 ] as const;
 
-const credentials = [
-  "Assistant Professor, Maastricht University — Psychopharmacology & Forensic Psychology",
-  "Postdoctoral Researcher, University of Bonn — Benzodiazepines, VR Crime Scenarios & Eye-Tracking",
-  "CELL Forensic Psychology Lab, KU Leuven",
-  "Triple Cum Laude — Bachelor's, Master's, and Doctoral Degree",
-  "Rubicon Postdoctoral Grant (NWO)",
-  "PNAS 2020 — Cannabis & False Memory Formation",
-  "20+ peer-reviewed publications · 600+ Google Scholar citations",
-  "60+ international media appearances — CNN, National Geographic, Daily Mail, WebMD",
-];
+const credentialKeys = [
+  "ewPage.cred1",
+  "ewPage.cred2",
+  "ewPage.cred3",
+  "ewPage.cred4",
+  "ewPage.cred5",
+  "ewPage.cred6",
+  "ewPage.cred7",
+  "ewPage.cred8",
+] as const;
 
 export default function ExpertWitnessPage() {
   const { t } = useI18n();
@@ -64,7 +64,7 @@ export default function ExpertWitnessPage() {
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M19 12H5" /><path d="M12 19l-7-7 7-7" />
               </svg>
-              Back
+              {t("ewPage.back")}
             </Link>
           </motion.div>
 
@@ -106,7 +106,7 @@ export default function ExpertWitnessPage() {
               className="text-2xl sm:text-3xl font-bold tracking-tight mb-6"
               style={{ color: "var(--color-text)" }}
             >
-              Services
+              {t("ewPage.servicesTitle")}
             </h2>
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-2 gap-4"
@@ -250,9 +250,9 @@ export default function ExpertWitnessPage() {
             </h2>
             <div className="glass-card rounded-2xl p-6 sm:p-8">
               <ul className="space-y-3">
-                {credentials.map((item) => (
+                {credentialKeys.map((key) => (
                   <li
-                    key={item}
+                    key={key}
                     className="flex items-start gap-3 text-sm leading-relaxed"
                     style={{ color: "var(--color-text-secondary)" }}
                   >
@@ -260,7 +260,7 @@ export default function ExpertWitnessPage() {
                       className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: "var(--color-accent-secondary)" }}
                     />
-                    {item}
+                    {t(key)}
                   </li>
                 ))}
               </ul>

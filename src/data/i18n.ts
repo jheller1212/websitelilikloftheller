@@ -245,6 +245,56 @@ export const translations: TranslationMap = {
     de: "Sachverständigengutachten & Forensische Beratung",
     nl: "Deskundigenadvies & Forensisch Consult",
   },
+  "ewPage.back": {
+    en: "Back",
+    de: "Zurück",
+    nl: "Terug",
+  },
+  "ewPage.servicesTitle": {
+    en: "Services",
+    de: "Leistungen",
+    nl: "Diensten",
+  },
+  "ewPage.cred1": {
+    en: "Assistant Professor, Maastricht University — Psychopharmacology & Forensic Psychology",
+    de: "Assistenzprofessorin, Universität Maastricht — Psychopharmakologie & Forensische Psychologie",
+    nl: "Universitair docent, Universiteit Maastricht — Psychofarmacologie & Forensische Psychologie",
+  },
+  "ewPage.cred2": {
+    en: "Postdoctoral Researcher, University of Bonn — Benzodiazepines, VR Crime Scenarios & Eye-Tracking",
+    de: "Postdoktorandin, Universität Bonn — Benzodiazepine, VR-Verbrechensszenarien & Eye-Tracking",
+    nl: "Postdoctoraal onderzoeker, Universiteit van Bonn — Benzodiazepinen, VR-misdaadscenario's & eye-tracking",
+  },
+  "ewPage.cred3": {
+    en: "CELL Forensic Psychology Lab, KU Leuven",
+    de: "CELL Forensisches Psychologielabor, KU Leuven",
+    nl: "CELL Forensisch Psychologielab, KU Leuven",
+  },
+  "ewPage.cred4": {
+    en: "Triple Cum Laude — Bachelor's, Master's, and Doctoral Degree",
+    de: "Dreifach Cum Laude — Bachelor-, Master- und Doktorabschluss",
+    nl: "Driemaal Cum Laude — bachelor-, master- en doctoraalgraad",
+  },
+  "ewPage.cred5": {
+    en: "Rubicon Postdoctoral Grant (NWO)",
+    de: "Rubicon-Postdoc-Stipendium (NWO)",
+    nl: "Rubicon postdoctorale beurs (NWO)",
+  },
+  "ewPage.cred6": {
+    en: "PNAS 2020 — Cannabis & False Memory Formation",
+    de: "PNAS 2020 — Cannabis & Bildung falscher Erinnerungen",
+    nl: "PNAS 2020 — Cannabis & vorming van valse herinneringen",
+  },
+  "ewPage.cred7": {
+    en: "20+ peer-reviewed publications · 600+ Google Scholar citations",
+    de: "20+ peer-reviewte Publikationen · 600+ Google-Scholar-Zitationen",
+    nl: "20+ peer-reviewed publicaties · 600+ Google Scholar-citaties",
+  },
+  "ewPage.cred8": {
+    en: "60+ international media appearances — CNN, National Geographic, Daily Mail, WebMD",
+    de: "60+ internationale Medienauftritte — CNN, National Geographic, Daily Mail, WebMD",
+    nl: "60+ internationale media-optredens — CNN, National Geographic, Daily Mail, WebMD",
+  },
   "ewPage.intro": {
     en: "When a case turns on the reliability of a statement made under the influence of drugs, the science of memory becomes a legal question. My research sits precisely at this intersection. I provide independent scientific expert opinion grounded in peer-reviewed evidence — to solicitors, barristers, defence and prosecution teams, and courts across the Netherlands, the United Kingdom, Ireland, and internationally.",
     de: "Wenn ein Fall von der Zuverlässigkeit einer unter Drogeneinfluss abgegebenen Aussage abhängt, wird die Gedächtnisforschung zur Rechtsfrage. Meine Forschung liegt genau an dieser Schnittstelle. Ich erstelle unabhängige wissenschaftliche Gutachten auf der Grundlage von Peer-Review-Evidenz — für Rechtsanwälte, Verteidiger, Anklagevertreter und Gerichte in den Niederlanden, dem Vereinigten Königreich, Irland und international.",
