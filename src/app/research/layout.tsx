@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Research — Dr. Lilian Kloft-Heller",
     description:
       "Research programme at the intersection of forensic psychology and psychopharmacology: drugs, memory, and the law.",
-    url: "https://www.liliankloftheller.com/research",
+    url: "https://liliankloft.com/research",
   },
 };
 
