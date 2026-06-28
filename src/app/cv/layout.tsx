@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "CV — Dr. Lilian Kloft-Heller",
     description:
       "Academic CV: current position, education, research interests, and publications in forensic psychology and psychopharmacology.",
-    url: "https://www.liliankloftheller.com/cv",
+    url: "https://liliankloft.com/cv",
   },
 };
 

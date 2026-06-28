@@ -1,8 +1,8 @@
-# liliankloftheller.com
+# liliankloft.com
 
 Personal academic website for **Dr. Lilian Kloft-Heller**, researcher at Maastricht University specializing in forensic psychology, psychopharmacology, and memory research.
 
-**Live:** [liliankloftheller.com](https://liliankloftheller.com)
+**Live:** [liliankloft.com](https://liliankloft.com)
 
 ## What's on the site
 
