@@ -204,8 +204,7 @@ export default function Contact() {
                         className="underline underline-offset-4 decoration-1 hover:opacity-70 inline"
                         style={{ color: "var(--color-accent)" }}
                         onClick={() => {
-                          const btn = document.querySelector<HTMLButtonElement>("footer button");
-                          btn?.click();
+                          window.dispatchEvent(new CustomEvent("open-impressum"));
                         }}
                       >
                         {part}
