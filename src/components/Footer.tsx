@@ -75,6 +75,12 @@ export default function Footer() {
     if (!showImpressum && hasBeenOpenRef.current) openBtnRef.current?.focus();
   }, [showImpressum]);
 
+  useEffect(() => {
+    const open = () => setShowImpressum(true);
+    window.addEventListener("open-impressum", open);
+    return () => window.removeEventListener("open-impressum", open);
+  }, []);
+
   return (
     <>
       <footer
@@ -285,15 +291,15 @@ export default function Footer() {
                 </p>
                 <p>
                   This website is hosted on{" "}
-                  <strong>Netlify</strong> (Netlify, Inc., 512 2nd Street, Suite 200, San Francisco, CA 94107, USA). Server logs may record IP addresses. See Netlify&apos;s{" "}
+                  <strong>Vercel</strong> (Vercel Inc., 440 N Barranca Avenue #4133, Covina, CA 91723, USA). Server logs may record IP addresses. See Vercel&apos;s{" "}
                   <a
-                    href="https://www.netlify.com/privacy/"
+                    href="https://vercel.com/legal/privacy-policy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
                     style={{ color: "var(--color-accent)" }}
                   >
-                    Privacy Statement
+                    Privacy Policy
                   </a>{" "}
                   for details.
                 </p>

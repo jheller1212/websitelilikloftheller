@@ -159,9 +159,9 @@ export const translations: TranslationMap = {
   "contact.sendAnother": { en: "Send another message", de: "Weitere Nachricht senden", nl: "Nog een bericht versturen" },
   "contact.office": { en: "Office", de: "Büro", nl: "Kantoor" },
   "contact.gdpr": {
-    en: "I consent to my data being processed. <a>Privacy Policy</a>",
-    de: "Ich stimme der Verarbeitung meiner Daten zu. <a>Datenschutzerklärung</a>",
-    nl: "Ik ga akkoord met de verwerking van mijn gegevens. <a>Privacybeleid</a>",
+    en: "I consent to my message being processed by Formspree Inc. (USA) to handle my inquiry. <a>Privacy Policy</a>",
+    de: "Ich stimme zu, dass meine Nachricht zur Bearbeitung meiner Anfrage durch Formspree Inc. (USA) verarbeitet wird. <a>Datenschutzerklärung</a>",
+    nl: "Ik ga ermee akkoord dat mijn bericht wordt verwerkt door Formspree Inc. (VS) om mijn aanvraag te behandelen. <a>Privacybeleid</a>",
   },
 
   // ── Footer ────────────────────────────────────────────────────────
