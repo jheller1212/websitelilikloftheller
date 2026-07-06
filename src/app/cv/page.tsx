@@ -15,7 +15,7 @@ export default function CVPage() {
     <main id="main-content" className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`}
+          href="/"
           className="inline-block text-sm mb-8 hover:opacity-70 transition-opacity"
           style={{ color: "var(--color-accent)" }}
         >

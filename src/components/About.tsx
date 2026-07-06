@@ -123,7 +123,7 @@ export default function About() {
             >
               <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/lilian-headshot.jpg`}
+                  src="/images/lilian-headshot.jpg"
                   alt="Dr. Lilian Kloft-Heller"
                   fill
                   className="object-cover"
@@ -133,7 +133,7 @@ export default function About() {
               </div>
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/images/lilian-cumlaude.jpg`}
+                  src="/images/lilian-cumlaude.jpg"
                   alt="Dr. Lilian Kloft-Heller — Cum Laude Doctoral Degree"
                   fill
                   className="object-cover"
