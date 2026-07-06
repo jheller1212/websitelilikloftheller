@@ -5,12 +5,30 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
-import { publications, Publication } from "@/data/publications";
+import { publications, Publication, PublicationType } from "@/data/publications";
 import { socialLinks } from "@/data/socials";
 
 const scholarLink = socialLinks.find((s) => s.platform === "google-scholar");
 
 type SortMode = "relevance" | "year";
+type TypeFilter = PublicationType | "all";
+
+// Only offer filters for types that actually occur in the data
+const availableTypes: TypeFilter[] = [
+  "all",
+  ...(["article", "review", "chapter", "comment", "abstract", "thesis"] as const).filter((type) =>
+    publications.some((p) => p.type === type)
+  ),
+];
+
+const typeLabelKey: Record<Exclude<TypeFilter, "all">, string> = {
+  article: "pub.article",
+  review: "pub.review",
+  chapter: "pub.chapter",
+  comment: "pub.comment",
+  abstract: "pub.abstract",
+  thesis: "pub.thesis",
+};
 
 function getAuthorRelevance(pub: Publication): number {
   const authors = pub.authors.split(",").map((a) => a.trim());
@@ -41,9 +59,12 @@ export default function Publications() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [showAll, setShowAll] = useState(false);
   const [sortMode, setSortMode] = useState<SortMode>("relevance");
+  const [typeFilter, setTypeFilter] = useState<TypeFilter>("all");
   const { t } = useI18n();
 
-  const sorted = sortPublications(publications, sortMode);
+  const filtered =
+    typeFilter === "all" ? publications : publications.filter((p) => p.type === typeFilter);
+  const sorted = sortPublications(filtered, sortMode);
   const displayed = showAll ? sorted : sorted.slice(0, 6);
 
   return (
@@ -67,8 +88,8 @@ export default function Publications() {
           >
             {t("pub.title")}
           </h2>
-          <div className="flex items-center gap-6 text-sm" style={{ color: "var(--color-text-secondary)" }}>
-            <span>{publications.length} {t("pub.count")}</span>
+          <div className="flex items-center gap-6 text-sm flex-wrap" style={{ color: "var(--color-text-secondary)" }}>
+            <span>{filtered.length} {t("pub.count")}</span>
             <div
               className="flex items-center rounded-full border text-xs"
               style={{ borderColor: "var(--color-border)" }}
@@ -88,6 +109,26 @@ export default function Publications() {
                 </button>
               ))}
             </div>
+          </div>
+          <div className="mt-4 flex items-center gap-2 flex-wrap text-xs">
+            {availableTypes.map((type) => (
+              <button
+                key={type}
+                onClick={() => {
+                  setTypeFilter(type);
+                  setShowAll(false);
+                }}
+                aria-pressed={typeFilter === type}
+                className="px-3 py-1.5 rounded-full border transition-colors font-medium"
+                style={{
+                  borderColor: "var(--color-border)",
+                  backgroundColor: typeFilter === type ? "var(--color-accent)" : "transparent",
+                  color: typeFilter === type ? "#fff" : "var(--color-text-secondary)",
+                }}
+              >
+                {type === "all" ? t("pub.filterAll") : t(typeLabelKey[type])}
+              </button>
+            ))}
           </div>
         </motion.div>
 
