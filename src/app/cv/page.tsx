@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import { publications } from "@/data/publications";
+import Link from "next/link";
 
 export default function CVPage() {
   const { t } = useI18n();
@@ -14,13 +15,13 @@ export default function CVPage() {
   return (
     <main id="main-content" className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <a
+        <Link
           href="/"
           className="inline-block text-sm mb-8 hover:opacity-70 transition-opacity"
           style={{ color: "var(--color-accent)" }}
         >
           &larr; {t("cv.backHome")}
-        </a>
+        </Link>
 
         <h1
           className="text-4xl sm:text-5xl font-bold tracking-tight mb-12"
