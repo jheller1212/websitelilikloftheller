@@ -77,6 +77,7 @@ export default function Publications() {
                 <button
                   key={mode}
                   onClick={() => setSortMode(mode)}
+                  aria-pressed={sortMode === mode}
                   className="px-3 py-1.5 rounded-full transition-colors font-medium capitalize"
                   style={{
                     backgroundColor: sortMode === mode ? "var(--color-accent)" : "transparent",
@@ -143,6 +144,7 @@ export default function Publications() {
             <MagneticButton
               className="px-6 py-2 rounded-full text-sm font-semibold border transition-colors"
               onClick={() => setShowAll(!showAll)}
+              aria-expanded={showAll}
             >
               {showAll ? t("pub.showLess") : `${t("pub.showAll")} ${sorted.length} ${t("pub.papers")}`}
             </MagneticButton>

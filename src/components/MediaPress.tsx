@@ -118,6 +118,7 @@ export default function MediaPress() {
           <MagneticButton
             className="px-6 py-2 rounded-full text-sm font-semibold border transition-colors"
             onClick={() => setShowAll(!showAll)}
+            aria-expanded={showAll}
           >
             {showAll ? t("media.showLess") : `${t("media.showAll")} (${nonFeatured.length}+)`}
           </MagneticButton>

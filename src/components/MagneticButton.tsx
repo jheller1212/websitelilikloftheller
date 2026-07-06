@@ -13,6 +13,7 @@ interface MagneticButtonProps {
   rel?: string;
   onClick?: () => void;
   "aria-label"?: string;
+  "aria-expanded"?: boolean;
   title?: string;
 }
 
@@ -27,6 +28,7 @@ export default function MagneticButton({
   rel,
   onClick,
   "aria-label": ariaLabel,
+  "aria-expanded": ariaExpanded,
   title,
 }: MagneticButtonProps) {
   const ref = useRef<HTMLElement>(null);
@@ -64,6 +66,7 @@ export default function MagneticButton({
     "data-magnetic": true,
     onClick,
     "aria-label": ariaLabel,
+    "aria-expanded": ariaExpanded,
     title,
   };
 

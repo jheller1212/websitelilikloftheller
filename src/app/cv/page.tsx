@@ -12,7 +12,7 @@ export default function CVPage() {
   const thesis = publications.filter((p) => p.type === "thesis");
 
   return (
-    <main className="min-h-screen pt-28 pb-16 px-6">
+    <main id="main-content" className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
         <a
           href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`}
