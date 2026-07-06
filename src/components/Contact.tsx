@@ -161,11 +161,23 @@ export default function Contact() {
                 >
                   {t("contact.message")}
                 </label>
+                <p
+                  id="confidentiality-note"
+                  className="text-xs mb-2 px-3 py-2 rounded-lg border-l-2"
+                  style={{
+                    color: "var(--color-text-secondary)",
+                    borderColor: "var(--color-accent)",
+                    backgroundColor: "var(--color-border)",
+                  }}
+                >
+                  {t("contact.confidentiality")}
+                </p>
                 <textarea
                   id="message"
                   name="message"
                   rows={5}
                   required
+                  aria-describedby="confidentiality-note"
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 resize-none"
                   style={{
                     borderColor: "var(--color-border)",

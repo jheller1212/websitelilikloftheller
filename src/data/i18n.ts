@@ -122,6 +122,11 @@ export const translations: TranslationMap = {
   "contact.email": { en: "Email", de: "E-Mail", nl: "E-mail" },
   "contact.message": { en: "Message", de: "Nachricht", nl: "Bericht" },
   "contact.messagePlaceholder": { en: "How can I help?", de: "Wie kann ich helfen?", nl: "Hoe kan ik helpen?" },
+  "contact.confidentiality": {
+    en: "Please do not include case-identifying details in this form — no names, case numbers, or facts of an ongoing matter. Describe your inquiry in general terms; confidential material can be exchanged through a secure channel after first contact.",
+    de: "Bitte geben Sie in diesem Formular keine fallbezogenen Angaben an — keine Namen, Aktenzeichen oder Sachverhalte eines laufenden Verfahrens. Beschreiben Sie Ihr Anliegen allgemein; vertrauliche Unterlagen können nach der ersten Kontaktaufnahme über einen sicheren Kanal ausgetauscht werden.",
+    nl: "Vermeld in dit formulier geen zaakgebonden gegevens — geen namen, zaaknummers of feiten van een lopende zaak. Omschrijf uw vraag in algemene termen; vertrouwelijke stukken kunnen na het eerste contact via een beveiligd kanaal worden uitgewisseld.",
+  },
   "contact.inquiry": { en: "Inquiry type", de: "Art der Anfrage", nl: "Type aanvraag" },
   "contact.inquiryDefault": { en: "Select...", de: "Auswählen...", nl: "Selecteer..." },
   "contact.inquiryExpertReport": {
