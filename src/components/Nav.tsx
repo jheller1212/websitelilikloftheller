@@ -171,6 +171,7 @@ export default function Nav() {
               <button
                 key={l}
                 onClick={() => setLocale(l)}
+                aria-pressed={locale === l}
                 className="px-2 py-1.5 rounded-full transition-colors font-medium"
                 style={{
                   backgroundColor: locale === l ? "var(--color-accent)" : "transparent",
