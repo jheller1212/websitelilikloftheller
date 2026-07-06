@@ -2,6 +2,7 @@
 
 import { useI18n } from "@/lib/i18n";
 import { publications } from "@/data/publications";
+import Link from "next/link";
 
 const researchAreas = [
   {
@@ -34,13 +35,13 @@ export default function ResearchPage() {
   return (
     <main id="main-content" className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
-        <a
+        <Link
           href="/"
           className="inline-block text-sm mb-8 hover:opacity-70 transition-opacity"
           style={{ color: "var(--color-accent)" }}
         >
           &larr; {t("research.backHome")}
-        </a>
+        </Link>
 
         <h1
           className="text-4xl sm:text-5xl font-bold tracking-tight mb-6"
@@ -131,13 +132,13 @@ export default function ResearchPage() {
         </section>
 
         <div className="text-center">
-          <a
+          <Link
             href="/#publications"
             className="inline-block px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors hover:opacity-90"
             style={{ backgroundColor: "var(--color-accent)" }}
           >
             View All Publications
-          </a>
+          </Link>
         </div>
       </div>
     </main>

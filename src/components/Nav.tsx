@@ -5,6 +5,7 @@ import { useEffect, useState, useCallback, MouseEvent } from "react";
 import MagneticButton from "./MagneticButton";
 import { useI18n, localeLabels, Locale } from "@/lib/i18n";
 import { LinkedInIcon, GoogleScholarIcon, OrcidIcon } from "./icons";
+import Link from "next/link";
 
 const linkKeys = [
   { key: "nav.about", href: "#about" },
@@ -89,13 +90,13 @@ export default function Nav() {
       }}
     >
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a
+        <Link
           href="/"
           className="text-lg font-bold tracking-tight"
           style={{ color: "var(--color-text)" }}
         >
           LKH
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
