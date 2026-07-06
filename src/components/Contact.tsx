@@ -76,6 +76,15 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — hidden from real users, filled only by bots; Formspree drops submissions with _gotcha set */}
+              <input
+                type="text"
+                name="_gotcha"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label
