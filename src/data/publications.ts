@@ -17,6 +17,28 @@ export const publications: Publication[] = [
   // ── Journal Articles ─────────────────────────────────────────────────
 
   {
+    id: 'kloft-heller-2026-sketch-ci',
+    title: 'Cannabis intoxication does not impair eyewitness recall with the Sketch Cognitive Interview but increases confidence in lineup errors',
+    authors: 'Kloft-Heller L, Junk A, Dando CJ, Sauerland M, Otgaar H, Ramaekers JG',
+    journal: 'Scientific Reports',
+    year: 2026,
+    doi: '10.1038/s41598-026-45069-0',
+    pubmedId: '41882216',
+    type: 'article',
+    featured: true,
+  },
+  {
+    id: 'madrid-gambin-2026-integromics',
+    title: 'Brain-body integromics of the ayahuasca experience',
+    authors: 'Madrid-Gambin F, Mallaroni P, Haro N, Pozo OJ, Mason NL, Reckweg JT, Kloft-Heller L, van Oorsouw K, Toennes SW, Ramaekers JG',
+    journal: 'Biomedicine & Pharmacotherapy',
+    year: 2026,
+    doi: '10.1016/j.biopha.2026.119391',
+    pubmedId: '42030660',
+    type: 'article',
+    featured: false,
+  },
+  {
     id: 'otgaar-2025-drug-assisted-psychotherapy',
     title: 'A Case Study on Drug-Assisted Psychotherapy and Recovering and Retracting Beliefs of Abuse',
     authors: 'Otgaar H, Kloft-Heller L, Griesfeller AF, Houben STL, ter Beek M, Howe ML, Li C, Muris P, Jelicic M',
@@ -211,6 +233,17 @@ export const publications: Publication[] = [
 
   // ── Reviews ──────────────────────────────────────────────────────────
 
+  {
+    id: 'griesfeller-2026-repressed-memory-psychedelics',
+    title: 'Evaluating the evidence for repressed memory recovery in psychedelic contexts',
+    authors: 'Griesfeller AF, Kooman L, Kloft-Heller L, Kangaslampi S, Ramaekers JG, Otgaar H',
+    journal: 'Psychopharmacology',
+    year: 2026,
+    doi: '10.1007/s00213-026-07076-x',
+    pubmedId: '42053657',
+    type: 'review',
+    featured: false,
+  },
   {
     id: 'kloft-2021-hazy-memories',
     title: 'Hazy memories in the courtroom: A review of alcohol and other drug effects on false memory and suggestibility',
