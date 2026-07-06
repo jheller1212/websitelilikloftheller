@@ -1,15 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Social icon components for Hero
 function LinkedInIcon({ size = 22 }: { size?: number }) {
@@ -58,56 +54,34 @@ const heroSocialLinks = [
 ];
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  const portraitRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
   const { t } = useI18n();
 
   const headline = "Dr. Lilian Kloft-Heller";
   const subtitle = t("hero.subtitle");
 
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-    const ctx = gsap.context(() => {
-      if (bgRef.current) {
-        gsap.to(bgRef.current, {
-          yPercent: 30,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-      if (portraitRef.current) {
-        gsap.to(portraitRef.current, {
-          yPercent: -15,
-          ease: "none",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          },
-        });
-      }
-    }, sectionRef);
-
-    return () => ctx.revert();
-  }, []);
+  // Scroll-linked parallax (was GSAP ScrollTrigger; framer-motion keeps the
+  // same 30%/-15% drift over the hero's exit without shipping a second
+  // animation library)
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgYRange = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const portraitYRange = useTransform(scrollYProgress, [0, 1], ["0%", "-15%"]);
+  const bgY = prefersReducedMotion ? "0%" : bgYRange;
+  const portraitY = prefersReducedMotion ? "0%" : portraitYRange;
 
   return (
     <section
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      <div
-        ref={bgRef}
+      <motion.div
         className="absolute inset-0 -z-10"
         style={{
+          y: bgY,
           background: `linear-gradient(135deg, var(--color-hero-gradient-start) 0%, var(--color-hero-gradient-end) 50%, var(--color-bg) 100%)`,
         }}
       >
@@ -118,13 +92,13 @@ export default function Hero() {
             backgroundSize: "40px 40px",
           }}
         />
-      </div>
+      </motion.div>
 
       <div className="relative z-10 px-6 max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16">
         {/* Portrait */}
         <motion.div
-          ref={portraitRef}
           className="flex-shrink-0"
+          style={{ y: portraitY }}
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
