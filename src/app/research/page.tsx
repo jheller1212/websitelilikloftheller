@@ -35,7 +35,7 @@ export default function ResearchPage() {
     <main id="main-content" className="min-h-screen pt-28 pb-16 px-6">
       <div className="max-w-4xl mx-auto">
         <a
-          href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/`}
+          href="/"
           className="inline-block text-sm mb-8 hover:opacity-70 transition-opacity"
           style={{ color: "var(--color-accent)" }}
         >
@@ -132,7 +132,7 @@ export default function ResearchPage() {
 
         <div className="text-center">
           <a
-            href={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/#publications`}
+            href="/#publications"
             className="inline-block px-8 py-3 rounded-full text-sm font-semibold text-white transition-colors hover:opacity-90"
             style={{ backgroundColor: "var(--color-accent)" }}
           >
