@@ -39,12 +39,35 @@ export default function Footer() {
   useEffect(() => {
     if (!showImpressum) return;
     hasBeenOpenRef.current = true;
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setShowImpressum(false);
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setShowImpressum(false);
+        return;
+      }
+      // Trap Tab inside the dialog
+      if (e.key !== "Tab") return;
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+      const focusables = dialog.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusables.length === 0) return;
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey) {
+        if (active === first || active === dialog) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else if (active === last) {
+        e.preventDefault();
+        first.focus();
+      }
     };
-    document.addEventListener("keydown", handleEsc);
+    document.addEventListener("keydown", handleKey);
     dialogRef.current?.focus();
-    return () => document.removeEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleKey);
   }, [showImpressum]);
 
   useEffect(() => {
