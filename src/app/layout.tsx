@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import ThemeProvider from "@/components/ThemeProvider";
 import { I18nProvider } from "@/lib/i18n";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -126,6 +127,10 @@ export default function RootLayout({
         <ThemeProvider>
           <I18nProvider>{children}</I18nProvider>
         </ThemeProvider>
+        {/* Cookieless, first-party: served from /_vercel/insights on this
+            domain, so 'self' in the CSP already covers it. No device storage,
+            so no consent banner is required. */}
+        <Analytics />
       </body>
     </html>
   );

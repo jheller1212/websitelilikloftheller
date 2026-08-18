@@ -309,7 +309,7 @@ export default function Footer() {
                   No cookies or tracking
                 </p>
                 <p>
-                  This website uses no cookies, analytics, or third-party tracking. Language and theme preferences are stored in your browser&apos;s localStorage for functional purposes only and are exempt from consent requirements.
+                  This website uses no cookies and no third-party tracking. Visitor numbers are measured with Vercel Web Analytics, which is cookieless: it stores nothing on your device, sets no identifier, does not track you across sites, and cannot be used to identify you. Vercel already hosts this site, so no data is shared with any additional party. Language and theme preferences are stored in your browser&apos;s localStorage for functional purposes only. Both are exempt from consent requirements.
                 </p>
               </div>
 
