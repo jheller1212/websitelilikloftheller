@@ -157,6 +157,11 @@ export const translations: TranslationMap = {
   "contact.thanks": { en: "Thank you!", de: "Vielen Dank!", nl: "Bedankt!" },
   "contact.thanksSub": { en: "I’ll get back to you soon.", de: "Ich melde mich bald bei Ihnen.", nl: "Ik neem snel contact met u op." },
   "contact.sendAnother": { en: "Send another message", de: "Weitere Nachricht senden", nl: "Nog een bericht versturen" },
+  "contact.error": {
+    en: "Something went wrong and your message was not sent. Please try again, or email me directly.",
+    de: "Etwas ist schiefgelaufen und Ihre Nachricht wurde nicht gesendet. Bitte versuchen Sie es erneut oder schreiben Sie mir direkt.",
+    nl: "Er is iets misgegaan en uw bericht is niet verstuurd. Probeer het opnieuw of mail mij rechtstreeks.",
+  },
   "contact.office": { en: "Office", de: "Büro", nl: "Kantoor" },
   "contact.gdpr": {
     en: "I consent to my message being processed by Formspree Inc. (USA) to handle my inquiry. <a>Privacy Policy</a>",
