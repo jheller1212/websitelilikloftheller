@@ -77,8 +77,20 @@ const jsonLd = {
   name: "Lilian Kloft-Heller",
   givenName: "Lilian",
   familyName: "Kloft-Heller",
+  // She publishes and is cited as "Lilian Kloft"; naming both lets search and
+  // answer engines resolve the publication record to this person.
+  alternateName: "Lilian Kloft",
   honorificPrefix: "Dr.",
   url: siteUrl,
+  identifier: "https://orcid.org/0000-0002-4615-9581",
+  image: `${siteUrl}/images/lilian-headshot.jpg`,
+  mainEntityOfPage: siteUrl,
+  description:
+    "Assistant Professor at Maastricht University working at the intersection of forensic psychology and psychopharmacology. Her research investigates how psychoactive substances affect memory processes, focusing on false memory formation and its implications for eyewitness testimony and criminal investigations.",
+  alumniOf: [
+    { "@type": "CollegeOrUniversity", name: "Maastricht University" },
+    { "@type": "CollegeOrUniversity", name: "University of Groningen" },
+  ],
   jobTitle: "Assistant Professor & Expert Consultant in Forensic Psychology and Psychopharmacology",
   worksFor: {
     "@type": "Organization",
