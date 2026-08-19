@@ -109,7 +109,10 @@ export default function Hero() {
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6"
               style={{ color: "var(--color-text)" }}
             >
-              {headline}
+              {headline}{" "}
+              <span className="whitespace-nowrap text-base sm:text-lg md:text-xl font-normal align-middle" style={{ color: "var(--color-text-secondary)" }}>
+                ({t("hero.nee")})
+              </span>
             </h1>
           </motion.div>
 
