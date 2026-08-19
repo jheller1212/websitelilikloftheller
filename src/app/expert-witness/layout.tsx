@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 
 const siteUrl = "https://liliankloft.com";
 
@@ -15,9 +16,11 @@ export const metadata: Metadata = {
       "Scientific expert opinion on intoxication, memory, and statement reliability for courts and legal teams. Reports, testimony, and pre-trial consulting.",
     url: `${siteUrl}/expert-witness`,
     type: "website",
+    images: [OG_IMAGE],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
+    images: [OG_IMAGE.url],
     title: "Expert Witness — Drugs, Memory & Eyewitness Reliability | Dr. Lilian Kloft-Heller",
     description:
       "Scientific expert opinion on intoxication, memory, and statement reliability for courts and legal teams.",

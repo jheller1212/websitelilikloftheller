@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "CV — Dr. Lilian Kloft-Heller",
@@ -12,6 +13,11 @@ export const metadata: Metadata = {
     description:
       "Academic CV: current position, education, research interests, and publications in forensic psychology and psychopharmacology.",
     url: "https://liliankloft.com/cv",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_IMAGE.url],
   },
 };
 
