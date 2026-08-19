@@ -13,6 +13,9 @@ export const translations: TranslationMap = {
   "nav.expertWitness": { en: "Expert Witness", de: "Sachverständigin", nl: "Deskundige" },
 
   // ── Hero ───────────────────────────────────────────────────────────
+  // Her publication record is largely under "Kloft", so the maiden name needs
+  // to exist in crawlable text — not only in JSON-LD alternateName.
+  "hero.nee": { en: "née Kloft", de: "geb. Kloft", nl: "geb. Kloft" },
   "hero.subtitle": {
     en: "Psychopharmacology · Forensic Psychology · Expert Consulting",
     de: "Psychopharmakologie · Forensische Psychologie · Gutachten & Beratung",
