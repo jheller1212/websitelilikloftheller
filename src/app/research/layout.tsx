@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { OG_IMAGE } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "Research — Dr. Lilian Kloft-Heller",
@@ -12,6 +13,11 @@ export const metadata: Metadata = {
     description:
       "Research programme at the intersection of forensic psychology and psychopharmacology: drugs, memory, and the law.",
     url: "https://liliankloft.com/research",
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: [OG_IMAGE.url],
   },
 };
 
