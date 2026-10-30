@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { OG_IMAGE } from "@/lib/og";
+import { expertServices } from "@/lib/expertKit";
 
 const siteUrl = "https://liliankloft.com";
 
@@ -43,6 +44,14 @@ const jsonLd = {
   availableChannel: {
     "@type": "ServiceChannel",
     availableLanguage: ["English", "Dutch", "German"],
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Expert witness services",
+    itemListElement: expertServices.map((service) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", ...service },
+    })),
   },
   provider: {
     "@type": "Person",
