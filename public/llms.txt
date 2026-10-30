@@ -34,6 +34,7 @@ psychology, virtual reality crime scenarios, eye-tracking.
 - [Home](https://liliankloft.com/): overview, background, and contact.
 - [Research](https://liliankloft.com/research): false memory under substance influence, eyewitness reliability, forensic interviewing.
 - [Expert witness](https://liliankloft.com/expert-witness): written expert reports, courtroom testimony, and pre-trial consulting for legal teams.
+- [Expert kit](https://liliankloft.com/expert-kit.md): credentials, services, jurisdictions, how an engagement works, and the confidentiality rule for first contact.
 - [CV](https://liliankloft.com/cv): education, positions, grants, and publications.
 
 ## Elsewhere
