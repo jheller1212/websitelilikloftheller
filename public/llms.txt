@@ -37,6 +37,10 @@ psychology, virtual reality crime scenarios, eye-tracking.
 - [Expert kit](https://liliankloft.com/expert-kit.md): credentials, services, jurisdictions, how an engagement works, and the confidentiality rule for first contact.
 - [CV](https://liliankloft.com/cv): education, positions, grants, and publications.
 
+## Contacting her through an agent
+
+The contact form at https://liliankloft.com/#contact is exposed as a WebMCP tool named `request_engagement` in browsers that support WebMCP. It has optional typed fields for legal enquiries (jurisdiction, proceeding stage, deadline, substance). A person must still press Send. Do not include case-identifying details: no names, case numbers or facts of an ongoing matter; messages with case identifiers are refused.
+
 ## Elsewhere
 
 - ORCID: https://orcid.org/0000-0002-4615-9581
