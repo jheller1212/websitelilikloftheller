@@ -5,12 +5,11 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
+import { COUNTRY_COUNT, LANGUAGE_COUNT, MEDIA_COUNT, formatStats } from "@/lib/stats";
 import { pressMentions } from "@/data/press";
 
 const sortedMentions = [...pressMentions].sort((a, b) => b.date.localeCompare(a.date));
 const featured = sortedMentions.filter((m) => m.featured);
-const totalCountries = new Set(sortedMentions.map((m) => m.country)).size;
-const totalLanguages = new Set(sortedMentions.map((m) => m.language)).size;
 
 export default function MediaPress() {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -45,12 +44,12 @@ export default function MediaPress() {
             className="text-base sm:text-lg max-w-3xl leading-relaxed mb-6"
             style={{ color: "var(--color-text-secondary)" }}
           >
-            {t("media.subtitle")}
+            {formatStats(t("media.subtitle"))}
           </p>
           <div className="flex gap-6 text-sm" style={{ color: "var(--color-text-secondary)" }}>
-            <span>{pressMentions.length} {t("media.outlets")}</span>
-            <span>{totalCountries} {t("media.countries")}</span>
-            <span>{totalLanguages} {t("media.languages")}</span>
+            <span>{MEDIA_COUNT} {t("media.outlets")}</span>
+            <span>{COUNTRY_COUNT} {t("media.countries")}</span>
+            <span>{LANGUAGE_COUNT} {t("media.languages")}</span>
           </div>
         </motion.div>
 
@@ -120,7 +119,7 @@ export default function MediaPress() {
             onClick={() => setShowAll(!showAll)}
             aria-expanded={showAll}
           >
-            {showAll ? t("media.showLess") : `${t("media.showAll")} (${nonFeatured.length}+)`}
+            {showAll ? t("media.showLess") : `${t("media.showAll")} (${nonFeatured.length})`}
           </MagneticButton>
         </div>
 

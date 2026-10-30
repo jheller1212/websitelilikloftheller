@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useI18n } from "@/lib/i18n";
+import { MEDIA_COUNT, PEER_REVIEWED_COUNT } from "@/lib/stats";
 
 const bentoCards = [
   { area: "a", titleKey: "bento.a.title", descKey: "bento.a.desc" },
@@ -22,8 +23,8 @@ const awards = [
   "Triple Cum Laude — Bachelor's, Master's, and Doctoral Degree",
   "Rubicon Postdoctoral Grant (NWO)",
   "PNAS publication — Cannabis & False Memory (2020)",
-  "20+ publications · 600+ Google Scholar citations",
-  "60+ international media appearances (CNN, National Geographic, Daily Mail, WebMD)",
+  `${PEER_REVIEWED_COUNT} peer-reviewed publications · 600+ Google Scholar citations`,
+  `${MEDIA_COUNT} international media appearances (CNN, National Geographic, Daily Mail, WebMD)`,
   "Postdoctoral researcher, University of Bonn",
 ];
 
