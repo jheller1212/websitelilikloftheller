@@ -86,9 +86,9 @@ export const translations: TranslationMap = {
   "media.eyebrow": { en: "Global Coverage", de: "Weltweite Berichterstattung", nl: "Wereldwijde aandacht" },
   "media.title": { en: "In the Media", de: "In den Medien", nl: "In de media" },
   "media.subtitle": {
-    en: "Research featured in international press across 20+ countries",
-    de: "Forschung in internationalen Medien in über 20 Ländern vorgestellt",
-    nl: "Onderzoek in internationale media in meer dan 20 landen",
+    en: "Research featured in international press across {countries} countries",
+    de: "Forschung in internationalen Medien in {countries} Ländern vorgestellt",
+    nl: "Onderzoek in internationale media in {countries} landen",
   },
   "media.featuredIn": { en: "Featured In", de: "Bekannt aus", nl: "Bekend van" },
   "media.allCoverage": { en: "All Media Coverage", de: "Alle Medienberichte", nl: "Alle media-aandacht" },
@@ -299,14 +299,14 @@ export const translations: TranslationMap = {
     nl: "PNAS 2020 — Cannabis & vorming van valse herinneringen",
   },
   "ewPage.cred7": {
-    en: "20+ peer-reviewed publications · 600+ Google Scholar citations",
-    de: "20+ peer-reviewte Publikationen · 600+ Google-Scholar-Zitationen",
-    nl: "20+ peer-reviewed publicaties · 600+ Google Scholar-citaties",
+    en: "{peerReviewed} peer-reviewed publications · 600+ Google Scholar citations",
+    de: "{peerReviewed} peer-reviewte Publikationen · 600+ Google-Scholar-Zitationen",
+    nl: "{peerReviewed} peer-reviewed publicaties · 600+ Google Scholar-citaties",
   },
   "ewPage.cred8": {
-    en: "60+ international media appearances — CNN, National Geographic, Daily Mail, WebMD",
-    de: "60+ internationale Medienauftritte — CNN, National Geographic, Daily Mail, WebMD",
-    nl: "60+ internationale media-optredens — CNN, National Geographic, Daily Mail, WebMD",
+    en: "{media} international media appearances — CNN, National Geographic, Daily Mail, WebMD",
+    de: "{media} internationale Medienauftritte — CNN, National Geographic, Daily Mail, WebMD",
+    nl: "{media} internationale media-optredens — CNN, National Geographic, Daily Mail, WebMD",
   },
   "ewPage.intro": {
     en: "When a case turns on the reliability of a statement made under the influence of drugs, the science of memory becomes a legal question. My research sits precisely at this intersection. I provide independent scientific expert opinion grounded in peer-reviewed evidence — to legal teams, defence and prosecution, and courts. Written reports and consulting are available internationally; in-person courtroom testimony is available in the Netherlands, Germany, and English-language proceedings across the EU.",

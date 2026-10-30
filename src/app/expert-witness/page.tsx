@@ -6,6 +6,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import MagneticButton from "@/components/MagneticButton";
 import { useI18n } from "@/lib/i18n";
+import { formatStats } from "@/lib/stats";
 
 const services = [
   { titleKey: "ew.service1.title", descKey: "ew.service1.desc" },
@@ -168,7 +169,7 @@ export default function ExpertWitnessPage() {
                       className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: "var(--color-accent)" }}
                     />
-                    {t(key)}
+                    {formatStats(t(key))}
                   </li>
                 ))}
               </ul>
@@ -260,7 +261,7 @@ export default function ExpertWitnessPage() {
                       className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0"
                       style={{ backgroundColor: "var(--color-accent-secondary)" }}
                     />
-                    {t(key)}
+                    {formatStats(t(key))}
                   </li>
                 ))}
               </ul>
