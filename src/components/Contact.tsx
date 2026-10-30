@@ -8,6 +8,29 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
 import { socialLinks } from "@/data/socials";
+import { looksLikeCaseMaterial } from "@/lib/caseDetails";
+
+// WebMCP: the form is exposed to browser AI agents as one structured tool.
+// No toolautosubmit: an agent can fill the fields, but a person still presses
+// Send, which keeps a human in the loop for every enquiry.
+const TOOL_DESCRIPTION =
+  "Send an enquiry to Dr. Lilian Kloft-Heller (Maastricht University) about expert witness work on drugs and memory, consulting, research collaboration, speaking or media. " +
+  "Never include case-identifying details: no names of parties or witnesses, no case or file numbers, no facts of an ongoing matter. Describe the enquiry in general terms; confidential material is exchanged through a secure channel after first contact. " +
+  "Messages that contain case identifiers are refused.";
+
+const CASE_MATERIAL_REFUSAL =
+  "Not sent: the message appears to contain case-identifying details (such as a case number). Rewrite it in general terms without names, case numbers or facts of the matter, then try again.";
+
+type AgentSubmitEvent = React.FormEvent<HTMLFormElement> & {
+  nativeEvent: SubmitEvent & {
+    agentInvoked?: boolean;
+    respondWith?: (result: Promise<unknown>) => void;
+  };
+};
+
+const fieldClass =
+  "w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]";
+const fieldStyle = { borderColor: "var(--color-border)", color: "var(--color-text)" };
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -88,9 +111,30 @@ export default function Contact() {
             </div>
           ) : (
             <form
+              toolname="request_engagement"
+              tooldescription={TOOL_DESCRIPTION}
               onSubmit={(e) => {
-                track("contact_send_attempt");
-                return handleSubmit(e);
+                const native = (e as AgentSubmitEvent).nativeEvent;
+                const agentInvoked = native.agentInvoked === true;
+                track("contact_send_attempt", { agent: agentInvoked });
+
+                if (!agentInvoked || typeof native.respondWith !== "function") {
+                  return handleSubmit(e);
+                }
+
+                e.preventDefault();
+                const message =
+                  new FormData(e.currentTarget).get("message")?.toString() ?? "";
+                if (looksLikeCaseMaterial(message)) {
+                  track("contact_agent_refused_case_material");
+                  native.respondWith(Promise.resolve(CASE_MATERIAL_REFUSAL));
+                  return;
+                }
+                native.respondWith(
+                  handleSubmit(e).then(
+                    () => "Enquiry sent. Dr. Kloft-Heller will reply by email.",
+                  ),
+                );
               }}
               className="space-y-6"
             >
@@ -130,6 +174,7 @@ export default function Contact() {
                   <input
                     id="name"
                     name="name"
+                    toolparamdescription="Full name of the person sending the enquiry."
                     type="text"
                     required
                     className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
@@ -152,6 +197,7 @@ export default function Contact() {
                   <input
                     id="email"
                     name="email"
+                    toolparamdescription="Email address where the reply should go."
                     type="email"
                     required
                     className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
@@ -177,6 +223,7 @@ export default function Contact() {
                   id="inquiry"
                   name="inquiry"
                   required
+                  toolparamdescription="Type of enquiry. Use expert-report or pre-trial for legal matters."
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]"
                   style={{
                     borderColor: "var(--color-border)",
@@ -194,6 +241,91 @@ export default function Contact() {
                   <option value="other">{t("contact.inquiryOther")}</option>
                 </select>
               </div>
+
+
+              <fieldset className="space-y-4">
+                <legend
+                  className="text-sm font-medium mb-2"
+                  style={{ color: "var(--color-text-secondary)" }}
+                >
+                  {t("contact.legalHeading")}
+                </legend>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="jurisdiction" className="block text-xs mb-1" style={{ color: "var(--color-text-secondary)" }}>
+                      {t("contact.jurisdiction")}
+                    </label>
+                    <select
+                      id="jurisdiction"
+                      name="jurisdiction"
+                      defaultValue="not-applicable"
+                      toolparamdescription="Where the proceedings take place. Leave as not-applicable for non-legal enquiries."
+                      className={fieldClass}
+                      style={fieldStyle}
+                    >
+                      <option value="not-applicable">{t("contact.notApplicable")}</option>
+                      <option value="netherlands">{t("contact.jurisdictionNL")}</option>
+                      <option value="germany">{t("contact.jurisdictionDE")}</option>
+                      <option value="other-eu-english">{t("contact.jurisdictionEU")}</option>
+                      <option value="other">{t("contact.jurisdictionOther")}</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="stage" className="block text-xs mb-1" style={{ color: "var(--color-text-secondary)" }}>
+                      {t("contact.stage")}
+                    </label>
+                    <select
+                      id="stage"
+                      name="stage"
+                      defaultValue="not-applicable"
+                      toolparamdescription="Current stage of the proceedings."
+                      className={fieldClass}
+                      style={fieldStyle}
+                    >
+                      <option value="not-applicable">{t("contact.notApplicable")}</option>
+                      <option value="investigation">{t("contact.stageInvestigation")}</option>
+                      <option value="pre-trial">{t("contact.stagePreTrial")}</option>
+                      <option value="trial">{t("contact.stageTrial")}</option>
+                      <option value="appeal">{t("contact.stageAppeal")}</option>
+                      <option value="other">{t("contact.stageOther")}</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="deadline" className="block text-xs mb-1" style={{ color: "var(--color-text-secondary)" }}>
+                      {t("contact.deadline")}
+                    </label>
+                    <input
+                      id="deadline"
+                      name="deadline"
+                      type="date"
+                      toolparamdescription="Date by which a report or answer is needed (YYYY-MM-DD), if any."
+                      className={fieldClass}
+                      style={fieldStyle}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="substance" className="block text-xs mb-1" style={{ color: "var(--color-text-secondary)" }}>
+                      {t("contact.substance")}
+                    </label>
+                    <select
+                      id="substance"
+                      name="substance"
+                      defaultValue="not-applicable"
+                      toolparamdescription="Substance category involved, in general terms only."
+                      className={fieldClass}
+                      style={fieldStyle}
+                    >
+                      <option value="not-applicable">{t("contact.notApplicable")}</option>
+                      <option value="cannabis">{t("contact.substanceCannabis")}</option>
+                      <option value="alcohol">{t("contact.substanceAlcohol")}</option>
+                      <option value="benzodiazepines">{t("contact.substanceBenzo")}</option>
+                      <option value="mdma">{t("contact.substanceMDMA")}</option>
+                      <option value="psychedelics">{t("contact.substancePsychedelics")}</option>
+                      <option value="multiple-or-other">{t("contact.substanceMultiple")}</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
 
               <div>
                 <label
@@ -218,6 +350,7 @@ export default function Contact() {
                   id="message"
                   name="message"
                   rows={5}
+                  toolparamdescription="The enquiry in general terms. No names, case numbers or facts of an ongoing matter."
                   required
                   aria-describedby="confidentiality-note"
                   className="w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 resize-none"
@@ -235,6 +368,7 @@ export default function Contact() {
                   type="checkbox"
                   name="gdpr_consent"
                   required
+                  toolparamdescription="Consent to processing the message to answer the enquiry. Only the person sending it may give this; ask them before ticking."
                   className="mt-0.5 accent-[var(--color-accent)]"
                 />
                 <span>
