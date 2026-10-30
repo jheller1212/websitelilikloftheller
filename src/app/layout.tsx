@@ -25,18 +25,6 @@ export const metadata: Metadata = {
   title: "Dr. Lilian Kloft-Heller | Forensic Psychology & Psychopharmacology",
   description:
     "Dr. Lilian Kloft-Heller is a researcher at Maastricht University specializing in forensic psychology, psychopharmacology, and memory research. Available for research collaboration, speaking, and media inquiries.",
-  keywords: [
-    "Lilian Kloft-Heller",
-    "Lilian Kloft",
-    "forensic psychology",
-    "psychopharmacology",
-    "memory research",
-    "Maastricht University",
-    "false memories",
-    "drug-facilitated crime",
-    "eyewitness memory",
-    "legal psychology",
-  ],
   authors: [{ name: "Lilian Kloft-Heller", url: siteUrl }],
   creator: "Lilian Kloft-Heller",
   icons: {
@@ -107,12 +95,15 @@ const jsonLd = {
     "Drug Effects on Memory",
     "Legal Psychology",
     "Intoxicated Witness Reliability",
+    "Drug-Facilitated Crime",
+    "Eyewitness Testimony Under Intoxication",
   ],
   sameAs: [
     "https://www.linkedin.com/in/lilian-kloft/",
     "https://orcid.org/0000-0002-4615-9581",
     "https://scholar.google.com/citations?user=d8j0F2UAAAAJ&hl=en",
     "https://www.researchgate.net/profile/Lilian-Kloft",
+    "https://cris.maastrichtuniversity.nl/en/persons/lilian-kloft-heller/",
   ],
 };
 
