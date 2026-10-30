@@ -9,10 +9,33 @@ import MagneticButton from "./MagneticButton";
 import { useI18n } from "@/lib/i18n";
 import { socialLinks } from "@/data/socials";
 
+// WebMCP declarative attributes. Browsers without WebMCP ignore them. Deliberately
+// no toolautosubmit: the person reviews what an agent filled in and sends it.
+// The form posts straight to Formspree, so this rule cannot be enforced server-side;
+// the description is what stops an agent pasting a case file into the message.
+const webmcpForm = {
+  toolname: "request_engagement",
+  tooldescription:
+    "Send Dr. Lilian Kloft-Heller an enquiry about expert witness work, consulting, research, speaking or media. CONFIDENTIAL: never include names, case numbers or facts of an ongoing matter, and never paste case documents. Describe the enquiry in general terms only; confidential material is exchanged through a secure channel after first contact.",
+};
+const param = (toolparamdescription: string) => ({ toolparamdescription });
+
+const LEGAL_INQUIRIES = ["expert-report", "pre-trial"];
+const legalFields = [
+  { name: "jurisdiction", options: ["nl", "de", "eu", "other"], help: "Legal enquiries only: jurisdiction of the proceedings" },
+  { name: "stage", options: ["investigation", "trial", "appeal", "other"], help: "Legal enquiries only: stage of the proceedings" },
+  { name: "substance", options: ["cannabis", "mdma", "benzodiazepines", "psychedelics", "other"], help: "Legal enquiries only: substance category. Do not describe the facts." },
+];
+const fieldClass =
+  "w-full px-4 py-3 rounded-lg bg-transparent border text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)]";
+const fieldStyle = { borderColor: "var(--color-border)", color: "var(--color-text)" };
+const labelStyle = { color: "var(--color-text-secondary)" };
+
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const [state, handleSubmit] = useForm("mqewbpyp");
   const [dismissed, setDismissed] = useState(false);
+  const [inquiry, setInquiry] = useState("");
   const { t } = useI18n();
 
   useEffect(() => {
@@ -93,6 +116,7 @@ export default function Contact() {
                 return handleSubmit(e);
               }}
               className="space-y-6"
+              {...webmcpForm}
             >
               {/* Form-level failures (network, CSP, form disabled) carry no field,
                   so the per-field ValidationErrors below never surface them */}
@@ -117,6 +141,7 @@ export default function Contact() {
                 autoComplete="off"
                 aria-hidden="true"
                 className="hidden"
+                {...param("Spam trap. Always leave this empty.")}
               />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
@@ -138,6 +163,7 @@ export default function Contact() {
                       color: "var(--color-text)",
                     }}
                     placeholder={t("contact.namePlaceholder")}
+                    {...param("Name of the person enquiring, not of anyone involved in a case")}
                   />
                   <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
@@ -160,6 +186,7 @@ export default function Contact() {
                       color: "var(--color-text)",
                     }}
                     placeholder="your@email.com"
+                    {...param("Email address to reply to")}
                   />
                   <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
@@ -183,6 +210,8 @@ export default function Contact() {
                     color: "var(--color-text)",
                   }}
                   defaultValue=""
+                  onChange={(e) => setInquiry(e.target.value)}
+                  {...param("Kind of enquiry")}
                 >
                   <option value="" disabled>{t("contact.inquiryDefault")}</option>
                   <option value="expert-report">{t("contact.inquiryExpertReport")}</option>
@@ -193,6 +222,28 @@ export default function Contact() {
                   <option value="media">{t("contact.inquiryMedia")}</option>
                   <option value="other">{t("contact.inquiryOther")}</option>
                 </select>
+              </div>
+
+              {/* Stays in the DOM when collapsed so agents can see these parameters. */}
+              <div className={LEGAL_INQUIRIES.includes(inquiry) ? "grid grid-cols-1 sm:grid-cols-2 gap-6" : "hidden"}>
+                {legalFields.map((field) => (
+                  <div key={field.name}>
+                    <label htmlFor={field.name} className="block text-sm font-medium mb-2" style={labelStyle}>
+                      {t(`contact.${field.name}`)}
+                    </label>
+                    <select id={field.name} name={field.name} defaultValue="" className={fieldClass} style={fieldStyle} {...param(field.help)}>
+                      <option value="">{t("contact.selectOptional")}</option>
+                      {field.options.map((option) => (
+                        <option key={option} value={option}>{t(`contact.${field.name}.${option}`)}</option>
+                      ))}
+                    </select>
+                  </div>
+                ))}
+                <div>
+                  <label htmlFor="deadline" className="block text-sm font-medium mb-2" style={labelStyle}>{t("contact.deadline")}</label>
+                  <input id="deadline" name="deadline" type="date" className={fieldClass} style={fieldStyle}
+                    {...param("Legal enquiries only: deadline as YYYY-MM-DD")} />
+                </div>
               </div>
 
               <div>
@@ -226,6 +277,7 @@ export default function Contact() {
                     color: "var(--color-text)",
                   }}
                   placeholder={t("contact.messagePlaceholder")}
+                  {...param("The enquiry in general terms. No names, case numbers or facts of an ongoing matter.")}
                 />
                 <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
@@ -235,6 +287,7 @@ export default function Contact() {
                   type="checkbox"
                   name="gdpr_consent"
                   required
+                  {...param("Consent to processing this enquiry. Must be confirmed by the person the agent acts for; do not tick it on their behalf without asking.")}
                   className="mt-0.5 accent-[var(--color-accent)]"
                 />
                 <span>
