@@ -17,7 +17,6 @@ export default function MediaPress() {
   const { t } = useI18n();
 
   const nonFeatured = sortedMentions.filter((m) => !m.featured);
-  const displayed = showAll ? nonFeatured : [];
 
   return (
     <section id="media" className="py-14 sm:py-16 px-6">
@@ -123,15 +122,9 @@ export default function MediaPress() {
           </MagneticButton>
         </div>
 
-        {/* All coverage list */}
-        {showAll && (
-          <motion.div
-            className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.4 }}
-          >
-            {displayed.map((mention) => {
+        {/* Always in the server HTML for agents and crawlers; the toggle only hides it visually. */}
+          <div className={showAll ? "mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3" : "hidden"}>
+            {nonFeatured.map((mention) => {
               const Wrapper = mention.url ? "a" : "div";
               const linkProps = mention.url
                 ? { href: mention.url, target: "_blank" as const, rel: "noopener noreferrer" }
@@ -157,8 +150,7 @@ export default function MediaPress() {
                 </Wrapper>
               );
             })}
-          </motion.div>
-        )}
+          </div>
       </div>
     </section>
   );

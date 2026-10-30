@@ -65,7 +65,6 @@ export default function Publications() {
   const filtered =
     typeFilter === "all" ? publications : publications.filter((p) => p.type === typeFilter);
   const sorted = sortPublications(filtered, sortMode);
-  const displayed = showAll ? sorted : sorted.slice(0, 6);
 
   return (
     <section id="publications" className="py-14 sm:py-16 px-6">
@@ -141,7 +140,8 @@ export default function Publications() {
             visible: { transition: { staggerChildren: 0.08 } },
           }}
         >
-          {displayed.map((pub) => {
+          {/* All entries stay in the server HTML for agents and crawlers; the toggle only hides them visually. */}
+          {sorted.map((pub, index) => {
             const href = pub.doi
               ? `https://doi.org/${pub.doi}`
               : pub.pubmedId
@@ -154,7 +154,7 @@ export default function Publications() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glass-card rounded-xl p-6 hover:scale-[1.02] transition-transform group"
+                className={`glass-card rounded-xl p-6 hover:scale-[1.02] transition-transform group ${!showAll && index >= 6 ? "hidden" : ""}`}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
