@@ -10,6 +10,7 @@ import MediaPress from "@/components/MediaPress";
 import Collaborate from "@/components/Collaborate";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { worksJsonLd } from "@/lib/worksJsonLd";
 
 // Load smooth scroll only on client, skip on touch devices
 const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"), { ssr: false });
@@ -17,6 +18,7 @@ const SmoothScroll = dynamic(() => import("@/components/SmoothScroll"), { ssr: f
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: worksJsonLd }} />
       <SmoothScroll />
       <Nav />
       <main id="main-content" className="font-[family-name:var(--font-geist-sans)]">
